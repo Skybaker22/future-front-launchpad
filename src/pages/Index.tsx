@@ -86,7 +86,7 @@ const Index = () => {
             
             <div className="flex gap-4 mt-6 md:mt-0">
               <p className="text-xs text-gray-500">
-                Contact: <a href="mailto:timo.himmelsbach@datax.me" className="text-datax-teal hover:text-datax-teal/80">timo.himmelsbach@datax.me</a>
+                Contact: <a href="mailto:info@datax.me" className="text-datax-teal hover:text-datax-teal/80">info@datax.me</a>
               </p>
             </div>
           </div>

@@ -28,7 +28,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Contact Us</h4>
-                    <p className="text-sm text-datax-teal">timo.himmelsbach@datax.me</p>
+                    <p className="text-sm text-datax-teal">info@datax.me</p>
                   </div>
                 </div>
               </div>
