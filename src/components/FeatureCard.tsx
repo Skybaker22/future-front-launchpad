@@ -10,9 +10,9 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
   return (
-    <div className="glassmorphism rounded-xl p-6 group hover:border-futuristic-purple/50 transition-all duration-300">
-      <div className="w-12 h-12 rounded-full glassmorphism flex items-center justify-center mb-6 group-hover:bg-futuristic-purple/20">
-        <Icon className="w-6 h-6 text-futuristic-purple" />
+    <div className="glassmorphism rounded-xl p-6 group hover:border-datax-teal/50 transition-all duration-300">
+      <div className="w-12 h-12 rounded-full glassmorphism flex items-center justify-center mb-6 group-hover:bg-datax-teal/20">
+        <Icon className="w-6 h-6 text-datax-teal" />
       </div>
       
       <h3 className="text-xl font-bold mb-3">{title}</h3>

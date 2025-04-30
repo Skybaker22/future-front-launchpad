@@ -53,12 +53,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				futuristic: {
-					purple: '#8B5CF6',
-					cyan: '#0EA5E9',
-					magenta: '#D946EF',
-					dark: '#0F172A',
-					light: '#F8FAFC'
+				datax: {
+					navy: '#061A40',
+					teal: '#00C8AA',
+					'teal-light': '#5EECD9',
+					gray: '#F5F5F5',
 				}
 			},
 			borderRadius: {

@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: 220 70% 2%;
+    --background: 220 70% 8%;
     --foreground: 220 10% 98%;
 
     --card: 220 45% 8%;
@@ -14,7 +14,7 @@
     --popover: 220 45% 4%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 266 100% 64%;
+    --primary: 174 80% 45%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -23,7 +23,7 @@
     --muted: 217 33% 17%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 192 100% 45%;
+    --accent: 174 80% 45%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -31,7 +31,7 @@
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 266 100% 64%;
+    --ring: 174 80% 45%;
 
     --radius: 0.75rem;
   }
@@ -54,20 +54,21 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-futuristic-purple via-futuristic-cyan to-futuristic-magenta;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-datax-teal via-datax-teal-light to-datax-teal;
   }
   
   .bg-grid {
     background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(0, 200, 170, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 200, 170, 0.05) 1px, transparent 1px);
     background-size: 30px 30px;
   }
   
-  .bg-gradient-futuristic {
-    background: linear-gradient(-45deg, #8B5CF6, #0EA5E9, #D946EF);
-    background-size: 400% 400%;
-    animation: gradient-shift 15s ease infinite;
+  .bg-wave-pattern {
+    background-image: url('/lovable-uploads/23409fb8-bc82-4028-8489-d6698dc97182.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
   }
 }
 
@@ -82,3 +83,4 @@
     background-position: 0% 50%;
   }
 }
+
