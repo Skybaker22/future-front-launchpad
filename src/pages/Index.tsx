@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import FeatureCard from '@/components/FeatureCard';
 import HowItWorks from '@/components/HowItWorks';
 import ContactSection from '@/components/ContactSection';
+import PricingFeatures from '@/components/PricingFeatures';
 import { Database, Shield, LineChart, Lock, Server, Share2 } from 'lucide-react';
 
 const Index = () => {
@@ -63,6 +64,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <PricingFeatures />
       
       <HowItWorks />
       
