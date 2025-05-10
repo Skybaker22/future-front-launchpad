@@ -47,12 +47,12 @@ const Index = () => {
             />
             <FeatureCard
               icon={Shield}
-              title="Risk Management"
-              description="Proprietary algorithms analyze and minimize financial risk exposure when accessing sensitive data."
+              title="Regulatory Compliance"
+              description="Anonymization and regulatory compliance toolsuit."
             />
             <FeatureCard
               icon={Database}
-              title="Centralized Repository"
+              title="Decentralized Repository"
               description="Data stays on premises in a decentralized repository (data room) with a trusted execution environment, while providing a single secure access point for multiple life science datasets across institutions."
             />
             <FeatureCard
