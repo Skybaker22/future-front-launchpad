@@ -6,7 +6,7 @@ import FeatureCard from '@/components/FeatureCard';
 import HowItWorks from '@/components/HowItWorks';
 import ContactSection from '@/components/ContactSection';
 import PricingFeatures from '@/components/PricingFeatures';
-import { Database, Shield, LineChart, Lock, Server, Share2 } from 'lucide-react';
+import { Shield, Database, LineChart, HandCoins, Key, ShieldCheck } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -32,19 +32,24 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FeatureCard
+              icon={HandCoins}
+              title="Secure and Transparent Pricing"
+              description="Outcome-based pricing model that ensures you pay only for the actual business impact of the data."
+            />
+            <FeatureCard
+              icon={Key}
+              title="Secure Access to Datasets"
+              description="Compliant access to sensitive datasets via federated learning ('Data visiting') technology."
+            />
+            <FeatureCard
+              icon={ShieldCheck}
+              title="Complete Transparency"
+              description="Full oversight regarding when, by whom, and for what reasons data is accessed."
+            />
+            <FeatureCard
               icon={Shield}
               title="Risk Management"
               description="Proprietary algorithms analyze and minimize financial risk exposure when accessing sensitive data."
-            />
-            <FeatureCard
-              icon={Lock}
-              title="Secure Access"
-              description="End-to-end encrypted pathways for accessing and utilizing sensitive life science data."
-            />
-            <FeatureCard
-              icon={LineChart}
-              title="Data Analytics"
-              description="Advanced analytics tools that work with encrypted data without compromising security."
             />
             <FeatureCard
               icon={Database}
@@ -52,14 +57,9 @@ const Index = () => {
               description="Single secure source for accessing multiple life science datasets across institutions."
             />
             <FeatureCard
-              icon={Server}
-              title="Compliance Engine"
-              description="Automated regulatory compliance with HIPAA, GDPR, and industry-specific requirements."
-            />
-            <FeatureCard
-              icon={Share2}
-              title="Collaborative Tools"
-              description="Secure data sharing and collaboration features for cross-team research initiatives."
+              icon={LineChart}
+              title="Data Analytics"
+              description="Advanced analytics tools that work with encrypted data without compromising security."
             />
           </div>
         </div>
