@@ -53,7 +53,7 @@ const Index = () => {
             <FeatureCard
               icon={Database}
               title="Centralized Repository"
-              description="Single secure source for accessing multiple life science datasets across institutions."
+              description="Data stays on premises in a decentralized repository (data room) with a trusted execution environment, while providing a single secure access point for multiple life science datasets across institutions."
             />
             <FeatureCard
               icon={LineChart}
