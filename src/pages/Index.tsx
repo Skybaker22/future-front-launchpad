@@ -33,7 +33,7 @@ const Index = () => {
             <FeatureCard
               icon={HandCoins}
               title="Secure and Transparent Pricing"
-              description="Outcome-based pricing model that ensures you pay only for the actual business impact of the data."
+              description="De-risked, outcome-based pricing model where you pay only for the actual business impact of the data."
             />
             <FeatureCard
               icon={Key}
