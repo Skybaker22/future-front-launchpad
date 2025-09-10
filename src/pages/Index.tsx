@@ -113,7 +113,7 @@ const Index = () => {
                 <Shield className="w-8 h-8 text-datax-teal" />
               </div>
               <h3 className="text-lg font-bold mb-3">Secure On-Premise Infrastructure</h3>
-              <p className="text-gray-400 text-sm">Federated learning technology keeps you in full control. Startups train on anonymized data on-premise, then leave with improved models.</p>
+              <p className="text-gray-400 text-sm">Federated learning technology keeps you in full control. Companies train on anonymized data on-premise, then leave with improved models.</p>
             </div>
             
             <div className="glassmorphism rounded-xl p-6 text-center group hover:border-datax-teal/50 transition-all duration-300">
