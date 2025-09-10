@@ -64,6 +64,19 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Platform Interface Image */}
+      <section className="py-16 bg-datax-navy">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <img 
+              src="/lovable-uploads/078d0b53-a217-4b2d-bf33-6e42644b0d39.png" 
+              alt="DataX Platform Interface - Patient cohort discovery and data analysis"
+              className="w-full rounded-lg shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
+      
       {/* For Data Providers Section */}
       <section id="data-providers" className="py-24 relative overflow-hidden bg-gradient-to-b from-datax-navy to-datax-navy/95">
         <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
@@ -84,7 +97,7 @@ const Index = () => {
                 <HandCoins className="w-8 h-8 text-datax-teal" />
               </div>
               <h3 className="text-lg font-bold mb-3">AI Partnership Gateway</h3>
-              <p className="text-gray-400 text-sm">Gateway for AI partnerships from EU & worldwide. Double-digit pipeline of AI startups seeking collaborations.</p>
+              <p className="text-gray-400 text-sm">Gateway for AI partnerships from EU & worldwide. We bring demand to your datasets.</p>
             </div>
             
             <div className="glassmorphism rounded-xl p-6 text-center group hover:border-datax-teal/50 transition-all duration-300">
