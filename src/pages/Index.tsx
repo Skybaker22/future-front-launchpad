@@ -64,6 +64,56 @@ const Index = () => {
         </div>
       </section>
       
+      {/* For Data Providers Section */}
+      <section id="data-providers" className="py-24 relative overflow-hidden bg-gradient-to-b from-datax-navy to-datax-navy/95">
+        <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
+        
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              For <span className="text-datax-teal">Data Providers</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Unlock the value of your datasets through secure AI partnerships while maintaining full control
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="glassmorphism rounded-xl p-6 text-center group hover:border-datax-teal/50 transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-datax-teal/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-datax-teal/30 transition-all duration-300">
+                <HandCoins className="w-8 h-8 text-datax-teal" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">AI Partnership Gateway</h3>
+              <p className="text-gray-400 text-sm">Gateway for AI partnerships from EU & worldwide. Double-digit pipeline of AI startups seeking collaborations.</p>
+            </div>
+            
+            <div className="glassmorphism rounded-xl p-6 text-center group hover:border-datax-teal/50 transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-datax-teal/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-datax-teal/30 transition-all duration-300">
+                <LineChart className="w-8 h-8 text-datax-teal" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">Academic Value Creation</h3>
+              <p className="text-gray-400 text-sm">Joint research projects, publications in top-tier journals, and new grants & funding opportunities.</p>
+            </div>
+            
+            <div className="glassmorphism rounded-xl p-6 text-center group hover:border-datax-teal/50 transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-datax-teal/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-datax-teal/30 transition-all duration-300">
+                <Shield className="w-8 h-8 text-datax-teal" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">Secure On-Premise Infrastructure</h3>
+              <p className="text-gray-400 text-sm">Federated learning technology keeps you in full control. Startups train on anonymized data on-premise, then leave with improved models.</p>
+            </div>
+            
+            <div className="glassmorphism rounded-xl p-6 text-center group hover:border-datax-teal/50 transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-datax-teal/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-datax-teal/30 transition-all duration-300">
+                <Database className="w-8 h-8 text-datax-teal" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">Outcome-Based Revenue</h3>
+              <p className="text-gray-400 text-sm">Participate in future generated value - data for equity. We provide technical infrastructure to transparently track value along the data value chain.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <HowItWorks />
       
       <ContactSection />
