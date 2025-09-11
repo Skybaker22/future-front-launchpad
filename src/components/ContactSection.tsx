@@ -17,9 +17,24 @@ const ContactSection = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Join the <span className="text-datax-teal">Pilot Study</span>
               </h2>
-              <p className="text-gray-400 mb-8">
-                Be among the first to experience how DataX revolutionizes secure access to life science data while minimizing your financial risk.
+              <p className="text-gray-400 mb-4">
+                Be among the first to experience how DataX revolutionizes secure access to life science data.
               </p>
+              
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start text-gray-300">
+                  <span className="text-datax-teal mr-3 mt-1">•</span>
+                  Minimize financial risk with a low-barrier entry
+                </li>
+                <li className="flex items-start text-gray-300">
+                  <span className="text-datax-teal mr-3 mt-1">•</span>
+                  Unlock AI collaborations that accelerate innovation in healthcare
+                </li>
+                <li className="flex items-start text-gray-300">
+                  <span className="text-datax-teal mr-3 mt-1">•</span>
+                  Drive research impact & create new revenue streams
+                </li>
+              </ul>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
