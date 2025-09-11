@@ -29,6 +29,22 @@ const HeroSection = () => {
             Our innovative platform provides secure access to critical life science data, enabling breakthrough research while protecting privacy and reducing financial exposure.
           </p>
           
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <Button 
+              size="lg" 
+              className="bg-datax-teal text-datax-navy hover:bg-datax-teal/80"
+            >
+              Join Pilot Study <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-datax-teal/30 hover:bg-datax-teal/10"
+            >
+              Contact Us
+            </Button>
+          </div>
+          
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-white mb-4">Join the Pilot Study</h3>
             <p className="text-gray-300 mb-4">
@@ -48,22 +64,6 @@ const HeroSection = () => {
                 Drive research impact & create new revenue streams
               </li>
             </ul>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              className="bg-datax-teal text-datax-navy hover:bg-datax-teal/80"
-            >
-              Join Pilot Study <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-datax-teal/30 hover:bg-datax-teal/10"
-            >
-              Contact Us
-            </Button>
           </div>
           
           <div className="flex items-center space-x-4 pt-12">
