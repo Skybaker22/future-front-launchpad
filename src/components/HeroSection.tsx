@@ -29,6 +29,27 @@ const HeroSection = () => {
             Our innovative platform provides secure access to critical life science data, enabling breakthrough research while protecting privacy and reducing financial exposure.
           </p>
           
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-white mb-4">Join the Pilot Study</h3>
+            <p className="text-gray-300 mb-4">
+              Be among the first to experience how DataX revolutionizes secure access to life science data.
+            </p>
+            <ul className="space-y-2 text-gray-300">
+              <li className="flex items-start">
+                <span className="text-datax-teal mr-2">•</span>
+                Minimize financial risk with a low-barrier entry
+              </li>
+              <li className="flex items-start">
+                <span className="text-datax-teal mr-2">•</span>
+                Unlock AI collaborations that accelerate innovation in healthcare
+              </li>
+              <li className="flex items-start">
+                <span className="text-datax-teal mr-2">•</span>
+                Drive research impact & create new revenue streams
+              </li>
+            </ul>
+          </div>
+          
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               size="lg" 
