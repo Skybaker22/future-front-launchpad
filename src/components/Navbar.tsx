@@ -52,8 +52,9 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Button 
             className="bg-datax-teal text-datax-navy hover:bg-datax-teal/80 rounded-full px-6"
+            asChild
           >
-            Join Pilot
+            <a href="#contact">Join Us</a>
           </Button>
         </div>
         
@@ -81,8 +82,9 @@ const Navbar = () => {
           ))}
           <Button 
             className="w-full mt-4 bg-datax-teal hover:bg-datax-teal/80 text-datax-navy rounded-full"
+            asChild
           >
-            Join Pilot
+            <a href="#contact">Join Us</a>
           </Button>
         </div>
       )}
