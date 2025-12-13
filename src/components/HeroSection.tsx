@@ -12,10 +12,6 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="container mx-auto px-4 pt-32 pb-16 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 glassmorphism py-2 px-4 rounded-full mb-8">
-            <span className="w-2 h-2 bg-datax-teal rounded-full animate-pulse"></span>
-            <p className="text-sm">Stealth mode - Limited access</p>
-          </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Secure Access to
