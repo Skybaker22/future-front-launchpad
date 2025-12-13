@@ -19,7 +19,7 @@ const ContactSection = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Join the <span className="font-serif italic text-datax-teal">Pilot Study</span>
+              <span className="font-serif italic text-datax-teal">Join Us</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Be among the first to experience how DataX revolutionizes secure access to life science data.
@@ -74,8 +74,9 @@ const ContactSection = () => {
                   />
                   <Button 
                     className="w-full bg-datax-teal text-datax-navy hover:bg-datax-teal/80 h-12 rounded-xl text-base"
+                    type="submit"
                   >
-                    Request Pilot Access <ArrowRight className="ml-2 w-4 h-4" />
+                    Get Started <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                   <p className="text-xs text-center text-gray-500 pt-2">
                     We prioritize your privacy. All information shared is protected by our confidentiality agreement.

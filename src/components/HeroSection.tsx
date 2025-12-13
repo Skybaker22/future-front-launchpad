@@ -27,8 +27,11 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="bg-datax-teal text-datax-navy hover:bg-datax-teal/80 px-8 py-6 text-lg rounded-full"
+            asChild
           >
-            Join Pilot Study <ArrowRight className="ml-2 h-5 w-5" />
+            <a href="#contact">
+              Join Us <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
           </Button>
           
           <div className="flex items-center space-x-4 pt-12">
