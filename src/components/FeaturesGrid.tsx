@@ -28,13 +28,13 @@ const features = [
 
 const FeaturesGrid = () => {
   return (
-    <section id="data-providers" className="py-24 relative overflow-hidden bg-datax-navy">
+    <section id="data-partners" className="py-24 relative overflow-hidden bg-datax-navy">
       <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            For <span className="font-serif italic text-datax-teal">Data Providers</span>
+            For <span className="font-serif italic text-datax-teal">Data Partners</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Unlock the value of your datasets through secure AI partnerships while maintaining full control

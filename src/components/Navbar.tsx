@@ -17,8 +17,8 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { href: '#features', label: 'Features' },
-    { href: '#data-providers', label: 'For Providers' },
+    { href: '#data-developers', label: 'Data Developers' },
+    { href: '#data-partners', label: 'Data Partners' },
     { href: '#contact', label: 'Contact' },
   ];
 

@@ -14,10 +14,10 @@ const HeroSection = () => {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Secure Access to
+            The Data Collaboration Layer
           </h1>
           <h2 className="text-5xl md:text-7xl font-serif italic text-datax-teal mb-8">
-            Life Science Data
+            for Healthcare AI
           </h2>
           
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mb-10">
