@@ -47,82 +47,66 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          
-          {/* Value for Data Developers */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl">
-            <div className="flex items-start gap-3">
-              <Database className="w-5 h-5 text-datax-teal mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-300">Access to millions of data sets of our global data partners</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <Zap className="w-5 h-5 text-datax-teal mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-300">Fast access - Within weeks instead of months</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <Shield className="w-5 h-5 text-datax-teal mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-300">Fully compliant and secure data access</p>
-            </div>
-          </div>
         </div>
       </div>
       
-      {/* Bento Grid Cards */}
+      {/* Bento Grid Cards - Data Developer Benefits */}
       <div className="container mx-auto px-4 pb-24 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {/* Stats Card */}
+          {/* Millions of Data Sets Card */}
           <div className="glassmorphism rounded-2xl p-6 relative overflow-hidden group hover:border-datax-teal/30 transition-all duration-300">
             <div className="absolute top-4 right-4 w-16 h-16 bg-datax-teal/10 rounded-full blur-xl"></div>
-            <span className="text-5xl font-bold text-datax-teal">100%</span>
-            <p className="text-gray-400 mt-2">Data stays on-premise</p>
-            <div className="mt-4 h-24 flex items-end">
-              <div className="w-full h-full bg-gradient-to-t from-datax-teal/20 to-transparent rounded-lg"></div>
-            </div>
-          </div>
-          
-          {/* Features List Card */}
-          <div className="glassmorphism rounded-2xl p-6 group hover:border-datax-teal/30 transition-all duration-300">
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
-                <Shield className="w-5 h-5 text-datax-teal" />
-                <span className="text-sm">Federated Learning</span>
-              </div>
-              <div className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
-                <Key className="w-5 h-5 text-datax-teal" />
-                <span className="text-sm">Secure Data Access</span>
-              </div>
-              <div className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
-                <Database className="w-5 h-5 text-datax-teal" />
-                <span className="text-sm">Decentralized Repository</span>
-              </div>
-              <div className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
-                <Zap className="w-5 h-5 text-datax-teal" />
-                <span className="text-sm">Regulatory Compliance</span>
-              </div>
-              <div className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
-                <CheckCircle className="w-5 h-5 text-datax-teal" />
-                <span className="text-sm">Transparent Pricing</span>
-              </div>
-            </div>
-          </div>
-          
-          {/* Analytics Card */}
-          <div className="glassmorphism rounded-2xl p-6 relative overflow-hidden group hover:border-datax-teal/30 transition-all duration-300">
-            <div className="flex items-center gap-2 mb-4">
-              <Database className="w-4 h-4 text-datax-teal" />
-              <span className="text-sm text-gray-400">Data Analytics</span>
-            </div>
-            <div className="flex items-baseline gap-2">
-              <span className="text-4xl font-bold text-white">7X</span>
-              <span className="text-datax-teal text-sm">faster insights</span>
-            </div>
-            <div className="mt-6 flex gap-2">
-              {[40, 65, 45, 80, 60, 90, 70].map((h, i) => (
+            <Database className="w-8 h-8 text-datax-teal mb-4" />
+            <span className="text-3xl font-bold text-white">Millions</span>
+            <p className="text-gray-400 mt-2">of data sets from our global data partners</p>
+            <div className="mt-4 h-16 flex items-end gap-1">
+              {[30, 50, 40, 70, 55, 85, 60, 90, 75].map((h, i) => (
                 <div 
                   key={i} 
                   className="flex-1 bg-datax-teal/30 rounded-sm"
-                  style={{ height: `${h}px` }}
+                  style={{ height: `${h}%` }}
                 ></div>
               ))}
+            </div>
+          </div>
+          
+          {/* Fast Access Card */}
+          <div className="glassmorphism rounded-2xl p-6 relative overflow-hidden group hover:border-datax-teal/30 transition-all duration-300">
+            <div className="absolute top-4 right-4 w-16 h-16 bg-datax-teal/10 rounded-full blur-xl"></div>
+            <Zap className="w-8 h-8 text-datax-teal mb-4" />
+            <span className="text-3xl font-bold text-white">Weeks</span>
+            <p className="text-gray-400 mt-2">instead of months for data access</p>
+            <div className="mt-6 flex items-center gap-4">
+              <div className="flex-1">
+                <div className="text-xs text-gray-500 mb-1">Traditional</div>
+                <div className="h-2 bg-gray-600 rounded-full w-full"></div>
+              </div>
+              <div className="flex-1">
+                <div className="text-xs text-datax-teal mb-1">With DataX</div>
+                <div className="h-2 bg-datax-teal rounded-full w-1/3"></div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Compliant & Secure Card */}
+          <div className="glassmorphism rounded-2xl p-6 relative overflow-hidden group hover:border-datax-teal/30 transition-all duration-300">
+            <div className="absolute top-4 right-4 w-16 h-16 bg-datax-teal/10 rounded-full blur-xl"></div>
+            <Shield className="w-8 h-8 text-datax-teal mb-4" />
+            <span className="text-3xl font-bold text-white">100%</span>
+            <p className="text-gray-400 mt-2">Fully compliant and secure data access</p>
+            <div className="mt-4 space-y-2">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-datax-teal" />
+                <span className="text-xs text-gray-400">GDPR Compliant</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-datax-teal" />
+                <span className="text-xs text-gray-400">HIPAA Ready</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-datax-teal" />
+                <span className="text-xs text-gray-400">Data Stays On-Premise</span>
+              </div>
             </div>
           </div>
         </div>
