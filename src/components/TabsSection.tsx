@@ -46,7 +46,7 @@ const TabsSection = () => {
   const activeContent = tabs.find(t => t.id === activeTab)!;
 
   return (
-    <section className="py-24 relative overflow-hidden bg-datax-navy">
+    <section id="data-developers" className="py-24 relative overflow-hidden bg-datax-navy">
       <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
       
       <div className="container mx-auto px-4">
