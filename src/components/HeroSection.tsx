@@ -47,6 +47,22 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+          
+          {/* Value for Data Developers */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl">
+            <div className="flex items-start gap-3">
+              <Database className="w-5 h-5 text-datax-teal mt-1 flex-shrink-0" />
+              <p className="text-sm text-gray-300">Access to millions of data sets of our global data partners</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <Zap className="w-5 h-5 text-datax-teal mt-1 flex-shrink-0" />
+              <p className="text-sm text-gray-300">Fast access - Within weeks instead of months</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <Shield className="w-5 h-5 text-datax-teal mt-1 flex-shrink-0" />
+              <p className="text-sm text-gray-300">Fully compliant and secure data access</p>
+            </div>
+          </div>
         </div>
       </div>
       
