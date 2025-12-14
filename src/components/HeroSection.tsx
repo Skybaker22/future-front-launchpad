@@ -103,10 +103,6 @@ const HeroSection = () => {
                 <CheckCircle className="w-4 h-4 text-datax-teal" />
                 <span className="text-xs text-gray-400">HIPAA Ready</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-datax-teal" />
-                <span className="text-xs text-gray-400">Data Stays On-Premise</span>
-              </div>
             </div>
           </div>
         </div>
