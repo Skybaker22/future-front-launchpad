@@ -21,7 +21,7 @@ const HeroSection = () => {
           </h2>
           
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mb-10">
-            Enabling life science companies to access proprietary healthcare data—securely, compliantly, and at scale.
+            Enabling life science companies to access proprietary healthcare data - securely, compliantly, and at scale.
           </p>
           
           <Button 
