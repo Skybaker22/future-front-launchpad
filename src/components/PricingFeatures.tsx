@@ -68,7 +68,7 @@ const PricingFeatures = () => {
             }
             description={
               <p className="text-xl md:text-2xl font-medium text-white">
-                <span className="text-datax-teal">federated learning ("Data visiting")</span>
+                <span className="text-datax-teal">confidential computing ("Data visiting")</span>
               </p>
             }
           />
