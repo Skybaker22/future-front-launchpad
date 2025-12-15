@@ -6,7 +6,7 @@ const features = [
   {
     icon: HandCoins,
     title: 'AI Partnership Gateway',
-    description: 'Gateway for AI partnerships from EU & worldwide. We bring demand to your datasets.',
+    description: 'Gateway for global AI partnerships. We bring demand to your datasets.',
     highlight: true,
   },
   {
@@ -17,12 +17,7 @@ const features = [
   {
     icon: Shield,
     title: 'Secure On-Premise Infrastructure',
-    description: 'Federated learning technology keeps you in full control. Companies train on anonymized data on-premise.',
-  },
-  {
-    icon: Database,
-    title: 'Outcome-Based Revenue',
-    description: 'Participate in future generated value. Track value along the data value chain.',
+    description: 'Confidential computing technology keeps you in full control. Full IP security and compliance for Data Providers.',
   },
 ];
 
@@ -61,7 +56,7 @@ const FeaturesGrid = () => {
                   
                   {feature.highlight && (
                     <div className="flex flex-wrap gap-3 mt-6">
-                      {['EU Partners', 'Global Reach', 'Enterprise Ready'].map((tag, i) => (
+                      {['Global Reach', 'Enterprise Ready'].map((tag, i) => (
                         <span key={i} className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full text-sm">
                           <CheckCircle className="w-4 h-4 text-datax-teal" />
                           {tag}
