@@ -7,7 +7,7 @@ const tabs = [
     id: 'data-developers',
     label: 'Data Developers',
     title: 'For Data Developers',
-    description: 'Access sensitive life science datasets through our federated learning technology. Train AI models securely without data ever leaving premises.',
+    description: 'Access sensitive life science datasets through our confidential computing technology.',
     features: [
       { icon: Database, text: 'Millions of datasets from global partners' },
       { icon: Key, text: 'Fast access — weeks instead of months' },
