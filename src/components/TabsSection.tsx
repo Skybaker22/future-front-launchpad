@@ -4,45 +4,33 @@ import { Shield, Key, LineChart, HandCoins, Database, ShieldCheck } from 'lucide
 
 const tabs = [
   {
-    id: 'data-access',
-    label: 'Secure Access',
-    title: 'Compliant Data Access',
-    description: 'Access sensitive life science datasets through our federated learning technology. Data never leaves the premises while AI models train securely.',
+    id: 'data-developers',
+    label: 'Data Developers',
+    title: 'For Data Developers',
+    description: 'Access sensitive life science datasets through our federated learning technology. Train AI models securely without data ever leaving premises.',
     features: [
-      { icon: Shield, text: 'End-to-end encryption' },
-      { icon: Key, text: 'Privacy-preserving protocols' },
-      { icon: ShieldCheck, text: 'Regulatory compliance built-in' },
+      { icon: Database, text: 'Millions of datasets from global partners' },
+      { icon: Key, text: 'Fast access — weeks instead of months' },
+      { icon: ShieldCheck, text: 'Fully compliant and secure data access' },
     ],
     stat: { value: '100%', label: 'Data sovereignty maintained' },
   },
   {
-    id: 'transparency',
-    label: 'Transparency',
-    title: 'Complete Transparency',
-    description: 'Full oversight regarding when, by whom, and for what reasons your data is accessed. Track every interaction in real-time.',
+    id: 'data-partners',
+    label: 'Data Partners',
+    title: 'For Data Partners',
+    description: 'Unlock the value of your datasets through secure AI collaborations. Maintain full control while generating new revenue streams.',
     features: [
-      { icon: LineChart, text: 'Real-time access logs' },
-      { icon: Database, text: 'Audit trail reporting' },
-      { icon: ShieldCheck, text: 'Usage analytics dashboard' },
+      { icon: HandCoins, text: 'New revenue streams from your data' },
+      { icon: LineChart, text: 'Accelerate healthcare innovation' },
+      { icon: Shield, text: 'Complete transparency & control' },
     ],
-    stat: { value: '24/7', label: 'Monitoring & visibility' },
-  },
-  {
-    id: 'pricing',
-    label: 'Value-Based Pricing',
-    title: 'Outcome-Based Revenue',
-    description: 'Pay only for the actual business impact of the data. Our innovative pricing model ensures fair value exchange.',
-    features: [
-      { icon: HandCoins, text: 'Performance-based fees' },
-      { icon: LineChart, text: 'Value chain tracking' },
-      { icon: Database, text: 'Transparent cost breakdown' },
-    ],
-    stat: { value: '0%', label: 'Upfront data costs' },
+    stat: { value: '0%', label: 'Upfront data costs for partners' },
   },
 ];
 
 const TabsSection = () => {
-  const [activeTab, setActiveTab] = useState('data-access');
+  const [activeTab, setActiveTab] = useState('data-developers');
   const activeContent = tabs.find(t => t.id === activeTab)!;
 
   return (
@@ -52,10 +40,10 @@ const TabsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our <span className="font-serif italic text-datax-teal">Approach</span>
+            Who We <span className="font-serif italic text-datax-teal">Serve</span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            A comprehensive platform designed specifically for the unique challenges of life science data
+            Connecting data developers with data partners to accelerate healthcare AI innovation
           </p>
         </div>
         

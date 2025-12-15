@@ -19,10 +19,10 @@ const ContactSection = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="font-serif italic text-datax-teal">Join Us</span>
+              <span className="font-serif italic text-datax-teal">Get Started</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Be among the first to experience how DataX revolutionizes secure access to life science data.
+              Experience how DataX revolutionizes secure access to life science data for your organization.
             </p>
           </div>
           
