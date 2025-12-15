@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Key, ShieldCheck } from 'lucide-react';
+import { HandCoins, Key, ShieldCheck } from 'lucide-react';
 
 interface PricingFeatureProps {
   icon: React.ReactNode;
@@ -42,6 +42,22 @@ const PricingFeatures = () => {
           {/* Decorative glow effects */}
           <div className="absolute -top-20 -right-20 w-40 h-40 bg-datax-teal/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-datax-teal/10 rounded-full blur-3xl"></div>
+          
+          <PricingFeature
+            icon={<HandCoins className="w-10 h-10 text-datax-teal" />}
+            title={
+              <h3 className="text-xl md:text-2xl font-medium mb-2 group-hover:text-datax-teal transition-colors">
+                <span className="text-datax-teal">Secure and transparent</span> outcome-based pricing
+              </h3>
+            }
+            description={
+              <p className="text-xl md:text-2xl font-medium text-white">
+                <span className="text-datax-teal">Pay</span> only for the <span className="text-datax-teal">actual business impact of the data</span>
+              </p>
+            }
+          />
+          
+          <div className="border-t border-white/10 my-2"></div>
           
           <PricingFeature
             icon={<Key className="w-10 h-10 text-datax-teal" />}
