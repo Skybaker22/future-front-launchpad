@@ -27,10 +27,9 @@ const tabs = [
     ],
     stat: { value: '0%', label: 'Upfront data costs' },
     painPoints: [
-      { problem: 'No IT resources for integration', solution: 'Fully managed setup — we handle everything' },
+      { problem: 'No IT resources for integration', solution: 'Simple setup with minimal IT involvement' },
       { problem: 'Data privacy & compliance concerns', solution: 'Data never leaves your premises' },
       { problem: 'Complex legal agreements', solution: 'Standardized contracts, fast onboarding' },
-      { problem: 'Unclear ROI from data sharing', solution: 'Outcome-based pricing — pay only for results' },
     ],
   },
 ];
