@@ -19,13 +19,19 @@ const tabs = [
     id: 'data-partners',
     label: 'Data Partners',
     title: 'For Data Partners',
-    description: 'Unlock the value of your datasets through secure AI collaborations. Maintain full control while generating new revenue streams.',
+    description: 'We handle the technical complexity so you can focus on what matters — patient care and research.',
     features: [
       { icon: HandCoins, text: 'New revenue streams from your data' },
       { icon: LineChart, text: 'Accelerate healthcare innovation' },
       { icon: Shield, text: 'Complete transparency & control' },
     ],
-    stat: { value: '0%', label: 'Upfront data costs for partners' },
+    stat: { value: '0%', label: 'Upfront data costs' },
+    painPoints: [
+      { problem: 'No IT resources for integration', solution: 'Fully managed setup — we handle everything' },
+      { problem: 'Data privacy & compliance concerns', solution: 'Data never leaves your premises' },
+      { problem: 'Complex legal agreements', solution: 'Standardized contracts, fast onboarding' },
+      { problem: 'Unclear ROI from data sharing', solution: 'Outcome-based pricing — pay only for results' },
+    ],
   },
 ];
 
@@ -65,23 +71,39 @@ const TabsSection = () => {
         </div>
         
         {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
           {/* Left - Visual */}
           <div className="glassmorphism rounded-2xl p-8 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-datax-teal/10 to-transparent"></div>
             <div className="relative z-10">
-              <div className="flex items-baseline gap-3 mb-6">
+              <div className="flex items-baseline gap-3 mb-4">
                 <span className="text-6xl font-bold text-datax-teal">{activeContent.stat.value}</span>
               </div>
-              <p className="text-xl text-gray-300">{activeContent.stat.label}</p>
+              <p className="text-xl text-gray-300 mb-6">{activeContent.stat.label}</p>
               
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                {[1, 2, 3].map((_, i) => (
-                  <div key={i} className="h-24 bg-white/5 rounded-lg flex items-center justify-center">
-                    <div className="w-8 h-8 rounded-full bg-datax-teal/20"></div>
-                  </div>
-                ))}
-              </div>
+              {/* Pain Points for Data Partners */}
+              {activeContent.painPoints && (
+                <div className="space-y-3 mt-6 border-t border-white/10 pt-6">
+                  <p className="text-sm text-datax-teal font-medium uppercase tracking-wide mb-4">We solve your biggest challenges</p>
+                  {activeContent.painPoints.map((item, i) => (
+                    <div key={i} className="bg-white/5 rounded-lg p-3">
+                      <p className="text-gray-400 text-sm line-through mb-1">{item.problem}</p>
+                      <p className="text-gray-200 text-sm font-medium">✓ {item.solution}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              {/* Placeholder grid for Data Developers */}
+              {!activeContent.painPoints && (
+                <div className="mt-8 grid grid-cols-3 gap-4">
+                  {[1, 2, 3].map((_, i) => (
+                    <div key={i} className="h-24 bg-white/5 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-datax-teal/20"></div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           
