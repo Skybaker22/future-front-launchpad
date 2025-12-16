@@ -16,11 +16,11 @@ const Footer = () => {
           
           {/* Links */}
           <div className="flex flex-wrap justify-center gap-8">
-            <a href="#features" className="text-sm text-gray-400 hover:text-white transition-colors">
-              Features
+            <a href="#data-developers" className="text-sm text-gray-400 hover:text-white transition-colors">
+              Data Developers
             </a>
-            <a href="#data-providers" className="text-sm text-gray-400 hover:text-white transition-colors">
-              For Providers
+            <a href="#data-partners" className="text-sm text-gray-400 hover:text-white transition-colors">
+              Data Partners
             </a>
             <a href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">
               Contact
