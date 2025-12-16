@@ -107,9 +107,14 @@ const TabsSection = () => {
                 <div className="space-y-3 mt-6 border-t border-white/10 pt-6">
                   <p className="text-sm text-datax-teal font-medium uppercase tracking-wide mb-4">How it works</p>
                   {activeContent.steps.map((step, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <span className="text-datax-teal font-medium">{step.number}.</span>
-                      <span className="text-gray-200">{step.title}</span>
+                    <div key={i} className="group cursor-pointer rounded-lg p-2 -mx-2 transition-all duration-300 hover:bg-white/5">
+                      <div className="flex items-start gap-3">
+                        <span className="text-datax-teal font-medium">{step.number}.</span>
+                        <span className="text-gray-200 group-hover:text-white transition-colors">{step.title}</span>
+                      </div>
+                      <p className="text-gray-400 text-sm ml-6 mt-1 max-h-0 overflow-hidden opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300">
+                        {step.description}
+                      </p>
                     </div>
                   ))}
                 </div>
