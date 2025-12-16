@@ -6,7 +6,7 @@ import { ArrowRight, Mail, CheckCircle } from 'lucide-react';
 
 const ContactSection = () => {
   const benefits = [
-    'Minimize financial risk with a low-barrier entry',
+    'A privacy-preserving collaboration layer enabling compliant, scalable data access',
     'Unlock AI collaborations that accelerate innovation in healthcare',
     'Drive research impact & create new revenue streams',
   ];

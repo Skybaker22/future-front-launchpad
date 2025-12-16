@@ -6,7 +6,7 @@ const steps = [
   {
     number: '01',
     title: 'Connect',
-    description: 'Integrate your data infrastructure with our secure platform in minutes.',
+    description: 'Integrate your data infrastructure with our secure platform.',
   },
   {
     number: '02',
