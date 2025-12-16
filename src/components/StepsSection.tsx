@@ -16,7 +16,7 @@ const steps = [
   {
     number: '03',
     title: 'Create Value',
-    description: 'Generate revenue from your data assets with transparent, outcome-based pricing.',
+    description: 'Generate new revenue streams from your data assets through AI collaborations.',
   },
 ];
 
