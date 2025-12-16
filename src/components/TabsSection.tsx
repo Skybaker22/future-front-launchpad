@@ -2,6 +2,14 @@
 import React, { useState } from 'react';
 import { Shield, Key, LineChart, HandCoins, Database, ShieldCheck } from 'lucide-react';
 
+const dataDevSteps = [
+  { number: 1, title: 'Data demand', description: 'AI companies submit detailed data requests' },
+  { number: 2, title: 'Matching & design', description: 'DataX matches requests with suitable partners' },
+  { number: 3, title: 'Secure data access on-site', description: 'On-prem infrastructure, data never leaves' },
+  { number: 4, title: 'Training, validation, and reporting', description: 'Train within DataX environment' },
+  { number: 5, title: 'Value sharing', description: 'Hospitals receive payments, AI partners get access' },
+];
+
 const tabs = [
   {
     id: 'data-developers',
@@ -14,6 +22,7 @@ const tabs = [
       { icon: ShieldCheck, text: 'Fully compliant and secure data access' },
     ],
     stat: { value: '100%', label: 'Data sovereignty maintained' },
+    steps: dataDevSteps,
   },
   {
     id: 'data-partners',
@@ -93,12 +102,14 @@ const TabsSection = () => {
                 </div>
               )}
               
-              {/* Placeholder grid for Data Developers */}
-              {!activeContent.painPoints && (
-                <div className="mt-8 grid grid-cols-3 gap-4">
-                  {[1, 2, 3].map((_, i) => (
-                    <div key={i} className="h-24 bg-white/5 rounded-lg flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-datax-teal/20"></div>
+              {/* Steps for Data Developers */}
+              {activeContent.steps && (
+                <div className="space-y-3 mt-6 border-t border-white/10 pt-6">
+                  <p className="text-sm text-datax-teal font-medium uppercase tracking-wide mb-4">How it works</p>
+                  {activeContent.steps.map((step, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="text-datax-teal font-medium">{step.number}.</span>
+                      <span className="text-gray-200">{step.title}</span>
                     </div>
                   ))}
                 </div>
