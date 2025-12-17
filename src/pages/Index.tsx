@@ -10,12 +10,12 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-datax-navy text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-stripe-gradient text-foreground overflow-x-hidden">
       <Navbar />
       <HeroSection />
       
       {/* Platform Interface Image */}
-      <section id="features" className="py-16 bg-datax-navy">
+      <section id="features" className="py-16 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <img 

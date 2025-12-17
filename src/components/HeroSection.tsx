@@ -1,13 +1,17 @@
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Shield, Key, Database, Zap, CheckCircle } from 'lucide-react';
 
+const Globe = React.lazy(() => import('./Globe'));
+
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden flex flex-col items-center bg-datax-navy">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-wave-pattern opacity-10"></div>
+    <div className="relative min-h-screen w-full overflow-hidden flex flex-col items-center bg-stripe-gradient">
+      {/* 3D Globe Background */}
+      <Suspense fallback={null}>
+        <Globe />
+      </Suspense>
       
       {/* Hero Content */}
       <div className="container mx-auto px-4 pt-32 pb-16 relative z-10">
