@@ -21,7 +21,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/datax_portal_cohort.png" 
               alt="DataX Platform Interface - Patient cohort discovery and data analysis"
-              className="w-full rounded-2xl shadow-2xl border border-white/10 transition-transform duration-500 ease-out hover:scale-[1.02]"
+              className="w-full rounded-2xl shadow-2xl border border-white/10 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(45,212,191,0.3)]"
             />
           </div>
         </div>
