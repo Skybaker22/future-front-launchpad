@@ -19,7 +19,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <img 
-              src="/lovable-uploads/078d0b53-a217-4b2d-bf33-6e42644b0d39.png" 
+              src="/lovable-uploads/datax_portal_account_aligned_hq.png" 
               alt="DataX Platform Interface - Patient cohort discovery and data analysis"
               className="w-full rounded-2xl shadow-2xl border border-white/10"
             />
