@@ -3,14 +3,14 @@ import React, { Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Shield, Key, Database, Zap, CheckCircle } from 'lucide-react';
 
-const Globe3D = React.lazy(() => import('./Globe3D'));
+const DigitalGlobe = React.lazy(() => import('./DigitalGlobe'));
 
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden flex flex-col items-center bg-stripe-gradient">
-      {/* 3D Globe Background */}
+      {/* Animated Globe Background */}
       <Suspense fallback={null}>
-        <Globe3D />
+        <DigitalGlobe />
       </Suspense>
       
       {/* Hero Content */}
