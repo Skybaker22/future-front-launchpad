@@ -63,8 +63,6 @@ function GlobeGrid() {
           points={points}
           color="#2dd4bf"
           lineWidth={0.5}
-          opacity={0.15}
-          transparent
         />
       ))}
     </>
@@ -152,8 +150,6 @@ function ConnectionLines() {
             points={points}
             color="#2dd4bf"
             lineWidth={1}
-            opacity={0.3}
-            transparent
           />
         );
       })}
