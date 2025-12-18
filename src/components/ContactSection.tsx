@@ -12,21 +12,21 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-section-dark">
-      <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
+    <section id="contact" className="py-24 relative overflow-hidden bg-section-warm">
+      <div className="absolute inset-0 bg-grid opacity-20"></div>
       
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               <span className="font-serif italic text-datax-teal">Get Started</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Experience how DataX revolutionizes secure access to life science data for your organization.
             </p>
           </div>
           
-          <div className="glassmorphism rounded-3xl p-8 md:p-12">
+          <div className="glassmorphism-light rounded-3xl p-8 md:p-12 bg-white/60">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left - Benefits */}
               <div>
@@ -36,18 +36,18 @@ const ContactSection = () => {
                       <div className="w-8 h-8 rounded-full bg-datax-teal/20 flex items-center justify-center shrink-0">
                         <CheckCircle className="w-4 h-4 text-datax-teal" />
                       </div>
-                      <p className="text-gray-300">{benefit}</p>
+                      <p className="text-gray-700">{benefit}</p>
                     </div>
                   ))}
                 </div>
                 
-                <div className="glassmorphism rounded-xl p-6 mt-8">
+                <div className="bg-white/80 border border-gray-200 rounded-xl p-6 mt-8">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-datax-teal/20 flex items-center justify-center">
                       <Mail className="w-6 h-6 text-datax-teal" />
                     </div>
                     <div>
-                      <p className="font-medium">Contact Us Directly</p>
+                      <p className="font-medium text-gray-900">Contact Us Directly</p>
                       <a href="mailto:info@datax.me" className="text-datax-teal hover:underline">
                         info@datax.me
                       </a>
@@ -60,16 +60,16 @@ const ContactSection = () => {
               <div>
                 <form className="space-y-4">
                   <Input
-                    className="glassmorphism border-white/10 bg-transparent h-12 rounded-xl"
+                    className="bg-white border-gray-200 h-12 rounded-xl text-gray-900 placeholder:text-gray-500"
                     placeholder="Your name"
                   />
                   <Input
-                    className="glassmorphism border-white/10 bg-transparent h-12 rounded-xl"
+                    className="bg-white border-gray-200 h-12 rounded-xl text-gray-900 placeholder:text-gray-500"
                     placeholder="Email address"
                     type="email"
                   />
                   <Input
-                    className="glassmorphism border-white/10 bg-transparent h-12 rounded-xl"
+                    className="bg-white border-gray-200 h-12 rounded-xl text-gray-900 placeholder:text-gray-500"
                     placeholder="Company name"
                   />
                   <Button 
