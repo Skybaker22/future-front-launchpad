@@ -12,7 +12,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-datax-navy">
+    <section id="contact" className="py-24 relative overflow-hidden bg-section-dark">
       <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
       
       <div className="container mx-auto px-4">
