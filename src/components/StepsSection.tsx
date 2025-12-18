@@ -22,15 +22,15 @@ const steps = [
 
 const StepsSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-datax-navy">
-      <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
+    <section className="py-24 pb-40 relative overflow-hidden bg-section-light angled-divider-to-dark">
+      <div className="absolute inset-0 bg-grid opacity-30"></div>
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             How It <span className="font-serif italic text-datax-teal">Works</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-600 max-w-xl mx-auto">
             Three simple steps to unlock the value of your life science data
           </p>
         </div>
@@ -38,16 +38,16 @@ const StepsSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto">
           {steps.map((step, index) => (
             <React.Fragment key={step.number}>
-              <div className="glassmorphism rounded-2xl p-8 flex-1 text-center group hover:border-datax-teal/30 transition-all duration-300 w-full md:w-auto">
+              <div className="glassmorphism-light rounded-2xl p-8 flex-1 text-center group hover:border-datax-teal/30 transition-all duration-300 w-full md:w-auto">
                 <div className="text-6xl font-bold text-datax-teal/20 mb-4 group-hover:text-datax-teal/40 transition-colors duration-300">
                   {step.number}
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-                <p className="text-gray-400 text-sm">{step.description}</p>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">{step.title}</h3>
+                <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
               
               {index < steps.length - 1 && (
-                <ArrowRight className="w-8 h-8 text-datax-teal/40 hidden md:block shrink-0" />
+                <ArrowRight className="w-8 h-8 text-datax-teal/60 hidden md:block shrink-0" />
               )}
             </React.Fragment>
           ))}

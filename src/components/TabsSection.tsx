@@ -48,15 +48,15 @@ const TabsSection = () => {
   const activeContent = tabs.find(t => t.id === activeTab)!;
 
   return (
-    <section id="data-developers" className="py-24 relative overflow-hidden bg-datax-navy">
-      <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
+    <section id="data-developers" className="py-24 pb-40 relative overflow-hidden bg-section-light angled-divider-to-dark">
+      <div className="absolute inset-0 bg-grid opacity-30"></div>
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             Who We <span className="font-serif italic text-datax-teal">Serve</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-600 max-w-xl mx-auto">
             Connecting data developers with data partners to accelerate healthcare AI innovation
           </p>
         </div>
@@ -70,7 +70,7 @@ const TabsSection = () => {
               className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeTab === tab.id
                   ? 'bg-datax-teal text-datax-navy'
-                  : 'glassmorphism hover:bg-white/10'
+                  : 'glassmorphism-light text-gray-700 hover:bg-black/10'
               }`}
             >
               {tab.label}
@@ -81,22 +81,22 @@ const TabsSection = () => {
         {/* Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
           {/* Left - Visual */}
-          <div className="glassmorphism rounded-2xl p-8 relative overflow-hidden">
+          <div className="glassmorphism-light rounded-2xl p-8 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-datax-teal/10 to-transparent"></div>
             <div className="relative z-10">
               <div className="flex items-baseline gap-3 mb-4">
                 <span className="text-6xl font-bold text-datax-teal">{activeContent.stat.value}</span>
               </div>
-              <p className="text-xl text-gray-300 mb-6">{activeContent.stat.label}</p>
+              <p className="text-xl text-gray-700 mb-6">{activeContent.stat.label}</p>
               
               {/* Pain Points for Data Partners */}
               {activeContent.painPoints && (
-                <div className="space-y-3 mt-6 border-t border-white/10 pt-6">
+                <div className="space-y-3 mt-6 border-t border-black/10 pt-6">
                   <p className="text-sm text-datax-teal font-medium uppercase tracking-wide mb-4">We solve your biggest challenges</p>
                   {activeContent.painPoints.map((item, i) => (
-                    <div key={i} className="bg-white/5 rounded-lg p-3">
-                      <p className="text-gray-400 text-sm line-through mb-1">{item.problem}</p>
-                      <p className="text-gray-200 text-sm font-medium">✓ {item.solution}</p>
+                    <div key={i} className="bg-black/5 rounded-lg p-3">
+                      <p className="text-gray-500 text-sm line-through mb-1">{item.problem}</p>
+                      <p className="text-gray-800 text-sm font-medium">✓ {item.solution}</p>
                     </div>
                   ))}
                 </div>
@@ -104,15 +104,15 @@ const TabsSection = () => {
               
               {/* Steps for Data Developers */}
               {activeContent.steps && (
-                <div className="space-y-3 mt-6 border-t border-white/10 pt-6">
+                <div className="space-y-3 mt-6 border-t border-black/10 pt-6">
                   <p className="text-sm text-datax-teal font-medium uppercase tracking-wide mb-4">How it works</p>
                   {activeContent.steps.map((step, i) => (
-                    <div key={i} className="group cursor-pointer rounded-lg p-2 -mx-2 transition-all duration-300 hover:bg-white/5">
+                    <div key={i} className="group cursor-pointer rounded-lg p-2 -mx-2 transition-all duration-300 hover:bg-black/5">
                       <div className="flex items-start gap-3">
                         <span className="text-datax-teal font-medium">{step.number}.</span>
-                        <span className="text-gray-200 group-hover:text-white transition-colors">{step.title}</span>
+                        <span className="text-gray-800 group-hover:text-gray-900 transition-colors">{step.title}</span>
                       </div>
-                      <p className="text-gray-400 text-sm ml-6 mt-1 max-h-0 overflow-hidden opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300">
+                      <p className="text-gray-500 text-sm ml-6 mt-1 max-h-0 overflow-hidden opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300">
                         {step.description}
                       </p>
                     </div>
@@ -124,16 +124,16 @@ const TabsSection = () => {
           
           {/* Right - Text */}
           <div>
-            <h3 className="text-3xl font-bold mb-4">{activeContent.title}</h3>
-            <p className="text-gray-400 mb-8">{activeContent.description}</p>
+            <h3 className="text-3xl font-bold mb-4 text-gray-900">{activeContent.title}</h3>
+            <p className="text-gray-600 mb-8">{activeContent.description}</p>
             
             <div className="space-y-4">
               {activeContent.features.map((feature, i) => (
-                <div key={i} className="flex items-center gap-4 glassmorphism rounded-lg p-4">
+                <div key={i} className="flex items-center gap-4 glassmorphism-light rounded-lg p-4">
                   <div className="w-10 h-10 rounded-full bg-datax-teal/20 flex items-center justify-center">
                     <feature.icon className="w-5 h-5 text-datax-teal" />
                   </div>
-                  <span className="text-gray-200">{feature.text}</span>
+                  <span className="text-gray-800">{feature.text}</span>
                 </div>
               ))}
             </div>
