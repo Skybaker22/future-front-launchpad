@@ -391,7 +391,7 @@ const stats = [
 
 const DataPartnersSection: React.FC = () => {
   return (
-    <section className="bg-section-dark pt-24 pb-48 relative gradient-fade-to-light">
+    <section className="bg-section-dark pt-32 pb-48 relative gradient-fade-to-light">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text content */}
