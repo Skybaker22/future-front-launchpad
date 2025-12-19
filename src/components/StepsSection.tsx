@@ -22,7 +22,7 @@ const steps = [
 
 const StepsSection = () => {
   return (
-    <section className="py-24 pb-40 relative overflow-hidden bg-section-light angled-divider-to-warm">
+    <section className="py-24 pb-32 relative overflow-hidden bg-section-light gradient-fade-to-dark">
       <div className="absolute inset-0 bg-grid opacity-30"></div>
       
       <div className="container mx-auto px-4">

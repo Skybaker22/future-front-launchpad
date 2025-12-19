@@ -173,6 +173,36 @@
       linear-gradient(180deg, #faf5f0 0%, #f5f0eb 50%, #f0ebe6 100%);
   }
   
+  /* Smooth gradient transition - dark to light */
+  .gradient-fade-to-light {
+    position: relative;
+  }
+  .gradient-fade-to-light::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+    pointer-events: none;
+  }
+  
+  /* Smooth gradient transition - light to dark */
+  .gradient-fade-to-dark {
+    position: relative;
+  }
+  .gradient-fade-to-dark::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent 0%, hsl(220, 70%, 8%) 100%);
+    pointer-events: none;
+  }
+  
   /* Angled section divider - dark to light */
   .angled-divider-to-light {
     position: relative;
