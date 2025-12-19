@@ -122,6 +122,32 @@ const generateLandPoints = (): [number, number][] => {
 
 const landPoints = generateLandPoints();
 
+// Generate grid points for lat/lon lines (ocean grid)
+const generateGridPoints = (): [number, number][] => {
+  const points: [number, number][] = [];
+  const latStep = 15; // Latitude lines every 15 degrees
+  const lonStep = 15; // Longitude lines every 15 degrees
+  const dotSpacing = 8; // Spacing between dots along each line
+  
+  // Latitude lines (horizontal circles)
+  for (let lat = -75; lat <= 75; lat += latStep) {
+    for (let lon = -180; lon <= 180; lon += dotSpacing) {
+      points.push([lat, lon]);
+    }
+  }
+  
+  // Longitude lines (vertical meridians)
+  for (let lon = -180; lon < 180; lon += lonStep) {
+    for (let lat = -75; lat <= 75; lat += dotSpacing) {
+      points.push([lat, lon]);
+    }
+  }
+  
+  return points;
+};
+
+const gridPoints = generateGridPoints();
+
 function degToRad(deg: number) {
   return (deg * Math.PI) / 180;
 }
@@ -172,6 +198,11 @@ const InteractiveGlobe: React.FC = () => {
   // Pre-compute land point positions
   const landPointPositions = useMemo(() => {
     return landPoints.map(([lat, lon]) => latLonToSphere(lat, lon));
+  }, []);
+
+  // Pre-compute grid point positions
+  const gridPointPositions = useMemo(() => {
+    return gridPoints.map(([lat, lon]) => latLonToSphere(lat, lon));
   }, []);
 
   // Connection pairs: [sourceIndex, destinationIndex]
@@ -253,6 +284,20 @@ const InteractiveGlobe: React.FC = () => {
       ctx.beginPath();
       ctx.arc(cx, cy, globeSize, 0, Math.PI * 2);
       ctx.clip();
+
+      // Draw grid dots (ocean lat/lon lines)
+      gridPointPositions.forEach((pos) => {
+        const proj = project(pos, rot, globeSize, cx, cy);
+        if (proj.z < -0.1) return;
+        
+        const alpha = Math.max(0, Math.min(1, (proj.z + 0.2) * 1.2));
+        const dotSize = 0.5 * proj.scale;
+        
+        ctx.beginPath();
+        ctx.arc(proj.x, proj.y, dotSize, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(200, 40%, 45%, ${0.15 * alpha})`;
+        ctx.fill();
+      });
 
       // Draw dot-matrix land points
       landPointPositions.forEach((pos) => {
@@ -371,7 +416,7 @@ const InteractiveGlobe: React.FC = () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
     };
-  }, [points, connectionPairs, landPointPositions]);
+  }, [points, connectionPairs, landPointPositions, gridPointPositions]);
 
   return (
     <canvas 
