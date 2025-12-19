@@ -22,15 +22,21 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto relative">
               {/* Ambient glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-datax-teal/20 via-datax-cyan/10 to-datax-teal/20 rounded-3xl blur-2xl opacity-60"></div>
-              <div className="relative">
+              <div className="absolute -inset-6 bg-gradient-to-r from-datax-teal/25 via-datax-cyan/15 to-datax-teal/25 rounded-3xl blur-3xl opacity-70"></div>
+              <div className="relative group">
                 <img 
                   src="/lovable-uploads/datax_portal_premium.png" 
                   alt="DataX Platform Interface - Patient cohort discovery and data analysis"
-                  className="w-full rounded-2xl shadow-[0_25px_80px_-15px_rgba(0,0,0,0.5),0_0_40px_rgba(45,212,191,0.15)] border border-white/10 transition-all duration-500 ease-out hover:scale-[1.01] hover:shadow-[0_30px_100px_-15px_rgba(0,0,0,0.6),0_0_60px_rgba(45,212,191,0.25)]"
+                  className="w-full rounded-2xl shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6),0_0_50px_rgba(45,212,191,0.2)] border border-white/15 transition-all duration-700 ease-out hover:scale-[1.01] hover:shadow-[0_35px_120px_-20px_rgba(0,0,0,0.7),0_0_70px_rgba(45,212,191,0.3)] backdrop-blur-sm"
+                  style={{ 
+                    imageRendering: 'crisp-edges',
+                    filter: 'contrast(1.02) saturate(1.05)'
+                  }}
                 />
-                {/* Subtle inner glow overlay */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-transparent via-transparent to-white/5 pointer-events-none"></div>
+                {/* Glass reflection overlay */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/8 via-transparent to-transparent pointer-events-none"></div>
+                {/* Bottom fade for depth */}
+                <div className="absolute inset-x-0 bottom-0 h-20 rounded-b-2xl bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
               </div>
             </div>
           </div>
