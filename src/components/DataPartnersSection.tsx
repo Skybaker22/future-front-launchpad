@@ -27,60 +27,100 @@ const partnerLocations: PartnerLocation[] = [
   { name: "Riyadh", lat: 24.7136, lon: 46.6753, type: "source" },
 ];
 
-// More detailed continent outlines for realistic Earth look
-const continents = {
-  northAmerica: [
-    [60, -140], [70, -140], [72, -100], [70, -85], [60, -80], [55, -60], [45, -65],
-    [40, -70], [30, -80], [25, -80], [20, -90], [18, -100], [22, -105], [25, -110],
-    [30, -115], [35, -120], [40, -125], [48, -125], [55, -130], [60, -140]
-  ],
-  centralAmerica: [
-    [18, -100], [20, -90], [15, -85], [10, -85], [8, -80], [10, -75], [8, -77],
-    [15, -90], [18, -100]
-  ],
-  southAmerica: [
-    [10, -75], [12, -70], [10, -65], [5, -55], [0, -50], [-5, -35], [-15, -40],
-    [-25, -45], [-35, -55], [-45, -65], [-55, -68], [-55, -70], [-50, -75],
-    [-40, -73], [-30, -72], [-20, -70], [-15, -75], [-5, -80], [0, -80], [5, -77], [10, -75]
-  ],
-  europe: [
-    [70, -10], [72, 25], [70, 30], [68, 28], [60, 30], [55, 20], [55, 10],
-    [50, 5], [45, -5], [36, -10], [36, 0], [38, 5], [42, 3], [43, 8],
-    [45, 10], [45, 15], [42, 18], [40, 20], [42, 28], [45, 30], [48, 22],
-    [52, 22], [55, 25], [58, 28], [62, 30], [70, -10]
-  ],
-  africa: [
-    [37, -10], [35, 10], [32, 32], [30, 32], [22, 37], [12, 44], [10, 50],
-    [0, 42], [-10, 40], [-20, 35], [-25, 32], [-35, 20], [-35, 18],
-    [-30, 15], [-20, 12], [-10, 8], [0, 5], [5, -5], [5, -10], [10, -15],
-    [15, -17], [20, -17], [25, -15], [30, -10], [35, -5], [37, -10]
-  ],
-  middleEast: [
-    [42, 28], [40, 45], [38, 48], [32, 48], [28, 48], [24, 52], [22, 55],
-    [18, 52], [15, 45], [12, 44], [22, 37], [28, 35], [32, 32], [35, 36],
-    [38, 40], [40, 42], [42, 28]
-  ],
-  asia: [
-    [72, 60], [78, 100], [75, 140], [70, 180], [65, 170], [55, 140],
-    [50, 145], [45, 142], [40, 140], [35, 135], [35, 130], [38, 125],
-    [40, 120], [35, 120], [25, 120], [22, 115], [20, 110], [15, 110],
-    [10, 105], [5, 103], [1, 104], [-5, 105], [-8, 115], [-8, 120],
-    [5, 120], [10, 118], [18, 120], [22, 120], [28, 105], [25, 95],
-    [28, 90], [22, 88], [20, 92], [15, 80], [10, 78], [8, 77], [10, 72],
-    [22, 70], [25, 65], [30, 62], [35, 52], [42, 45], [45, 50], [50, 55],
-    [55, 60], [60, 60], [65, 70], [70, 70], [72, 60]
-  ],
-  australia: [
-    [-12, 130], [-12, 142], [-18, 146], [-25, 153], [-35, 150], [-38, 145],
-    [-38, 140], [-35, 135], [-32, 130], [-30, 115], [-25, 114], [-20, 118],
-    [-15, 125], [-12, 130]
-  ],
-  indonesia: [
-    [-5, 95], [-8, 105], [-8, 115], [-5, 120], [-2, 125], [0, 130], [0, 140],
-    [-5, 145], [-8, 140], [-5, 135], [-2, 130], [-5, 120], [-8, 115],
-    [-5, 105], [-5, 95]
-  ]
+// Generate dot-matrix land points for Stripe-style globe
+const generateLandPoints = (): [number, number][] => {
+  const points: [number, number][] = [];
+  const step = 3.5; // Density of dots
+  
+  const landMasses: { minLat: number; maxLat: number; minLon: number; maxLon: number; shape?: (lat: number, lon: number) => boolean }[] = [
+    // North America
+    { minLat: 25, maxLat: 72, minLon: -170, maxLon: -55, shape: (lat, lon) => {
+      if (lat > 60) return lon > -170 && lon < -60;
+      if (lat > 50) return lon > -130 && lon < -55;
+      if (lat > 40) return lon > -130 && lon < -65;
+      if (lat > 30) return lon > -125 && lon < -75;
+      return lon > -120 && lon < -80;
+    }},
+    // Central America
+    { minLat: 7, maxLat: 25, minLon: -120, maxLon: -75, shape: (lat, lon) => {
+      return lon > -105 - (25 - lat) * 0.5 && lon < -80 + (25 - lat) * 0.3;
+    }},
+    // South America
+    { minLat: -56, maxLat: 12, minLon: -82, maxLon: -34, shape: (lat, lon) => {
+      if (lat > 0) return lon > -80 && lon < -50;
+      if (lat > -20) return lon > -75 && lon < -40;
+      if (lat > -35) return lon > -72 && lon < -40;
+      return lon > -75 && lon < -60;
+    }},
+    // Europe
+    { minLat: 35, maxLat: 72, minLon: -10, maxLon: 40, shape: (lat, lon) => {
+      if (lat > 65) return lon > 5 && lon < 35;
+      if (lat > 55) return lon > -5 && lon < 40;
+      return lon > -10 && lon < 35;
+    }},
+    // Africa
+    { minLat: -35, maxLat: 37, minLon: -18, maxLon: 52, shape: (lat, lon) => {
+      if (lat > 25) return lon > -18 && lon < 35;
+      if (lat > 10) return lon > -18 && lon < 52;
+      if (lat > -5) return lon > -10 && lon < 45;
+      if (lat > -20) return lon > 10 && lon < 45;
+      return lon > 15 && lon < 35;
+    }},
+    // Middle East / Arabia
+    { minLat: 12, maxLat: 42, minLon: 35, maxLon: 65, shape: (lat, lon) => {
+      if (lat > 35) return lon > 35 && lon < 55;
+      if (lat > 25) return lon > 35 && lon < 60;
+      return lon > 40 && lon < 60;
+    }},
+    // Russia/North Asia
+    { minLat: 50, maxLat: 78, minLon: 40, maxLon: 180, shape: (lat, lon) => {
+      if (lat > 70) return lon > 60 && lon < 180;
+      return lon > 40 && lon < 180;
+    }},
+    // South/Southeast Asia
+    { minLat: 8, maxLat: 50, minLon: 65, maxLon: 145, shape: (lat, lon) => {
+      if (lat > 40) return lon > 70 && lon < 135;
+      if (lat > 30) return lon > 65 && lon < 125;
+      if (lat > 20) return lon > 70 && lon < 110;
+      return lon > 95 && lon < 110;
+    }},
+    // China/East Asia
+    { minLat: 18, maxLat: 55, minLon: 100, maxLon: 145, shape: (lat, lon) => {
+      if (lat > 45) return lon > 115 && lon < 145;
+      if (lat > 35) return lon > 105 && lon < 145;
+      return lon > 100 && lon < 125;
+    }},
+    // Japan
+    { minLat: 30, maxLat: 46, minLon: 128, maxLon: 146 },
+    // Indonesia
+    { minLat: -10, maxLat: 6, minLon: 95, maxLon: 142 },
+    // Australia
+    { minLat: -45, maxLat: -10, minLon: 112, maxLon: 155, shape: (lat, lon) => {
+      if (lat > -20) return lon > 120 && lon < 150;
+      if (lat > -30) return lon > 115 && lon < 155;
+      return lon > 115 && lon < 150;
+    }},
+    // New Zealand
+    { minLat: -48, maxLat: -34, minLon: 166, maxLon: 180 },
+  ];
+
+  for (let lat = -80; lat <= 80; lat += step) {
+    for (let lon = -180; lon <= 180; lon += step) {
+      for (const land of landMasses) {
+        if (lat >= land.minLat && lat <= land.maxLat && 
+            lon >= land.minLon && lon <= land.maxLon) {
+          if (!land.shape || land.shape(lat, lon)) {
+            points.push([lat, lon]);
+            break;
+          }
+        }
+      }
+    }
+  }
+  return points;
 };
+
+const landPoints = generateLandPoints();
 
 function degToRad(deg: number) {
   return (deg * Math.PI) / 180;
@@ -129,23 +169,20 @@ const InteractiveGlobe: React.FC = () => {
     }));
   }, []);
 
-  // Connection pairs: [sourceIndex, destinationIndex] - data flows FROM source TO destination
+  // Pre-compute land point positions
+  const landPointPositions = useMemo(() => {
+    return landPoints.map(([lat, lon]) => latLonToSphere(lat, lon));
+  }, []);
+
+  // Connection pairs: [sourceIndex, destinationIndex]
   const connectionPairs: [number, number][] = useMemo(() => [
-    // China to destinations
     [5, 0], [5, 1], [5, 3],
-    // India to destinations
     [6, 0], [6, 1], [6, 2],
-    // Mexico to US
     [7, 2], [7, 3], [7, 4],
-    // Uruguay to Europe/US
     [8, 0], [8, 2],
-    // Brazil to destinations
     [9, 0], [9, 1], [9, 2],
-    // Malaysia to destinations
     [10, 1], [10, 3],
-    // South Africa to Europe
     [11, 0], [11, 1],
-    // Saudi Arabia to Europe/US
     [12, 0], [12, 1], [12, 2],
   ], []);
 
@@ -187,14 +224,14 @@ const InteractiveGlobe: React.FC = () => {
       const globeSize = Math.min(width, height) * 0.4;
       const rot = now * 0.00012;
 
-      // Ocean gradient
+      // Dark globe background
       const oceanGrad = ctx.createRadialGradient(
-        cx - globeSize * 0.25, cy - globeSize * 0.25, globeSize * 0.05,
+        cx - globeSize * 0.2, cy - globeSize * 0.2, globeSize * 0.05,
         cx, cy, globeSize
       );
-      oceanGrad.addColorStop(0, "hsla(210, 60%, 25%, 0.7)");
-      oceanGrad.addColorStop(0.5, "hsla(215, 55%, 18%, 0.85)");
-      oceanGrad.addColorStop(1, "hsla(220, 50%, 12%, 0.95)");
+      oceanGrad.addColorStop(0, "hsla(220, 30%, 12%, 0.9)");
+      oceanGrad.addColorStop(0.6, "hsla(220, 25%, 8%, 0.95)");
+      oceanGrad.addColorStop(1, "hsla(220, 20%, 5%, 1)");
       
       ctx.beginPath();
       ctx.arc(cx, cy, globeSize, 0, Math.PI * 2);
@@ -203,8 +240,8 @@ const InteractiveGlobe: React.FC = () => {
 
       // Atmosphere glow
       const glowGrad = ctx.createRadialGradient(cx, cy, globeSize * 0.85, cx, cy, globeSize * 1.25);
-      glowGrad.addColorStop(0, "hsla(200, 70%, 60%, 0.05)");
-      glowGrad.addColorStop(0.5, "hsla(172, 66%, 50%, 0.08)");
+      glowGrad.addColorStop(0, "hsla(172, 50%, 40%, 0.03)");
+      glowGrad.addColorStop(0.5, "hsla(172, 66%, 50%, 0.06)");
       glowGrad.addColorStop(1, "transparent");
       ctx.beginPath();
       ctx.arc(cx, cy, globeSize * 1.25, 0, Math.PI * 2);
@@ -217,54 +254,21 @@ const InteractiveGlobe: React.FC = () => {
       ctx.arc(cx, cy, globeSize, 0, Math.PI * 2);
       ctx.clip();
 
-      // Draw continents with DataX brand teal/green colors
-      const landColor = "hsla(172, 45%, 30%, 0.8)";
-      const landBorder = "hsla(172, 55%, 45%, 0.6)";
-      
-      Object.entries(continents).forEach(([name, continent]) => {
-        const projectedContinent = continent.map(([lat, lon]) => {
-          const pos = latLonToSphere(lat, lon);
-          return project(pos, rot, globeSize, cx, cy);
-        });
-
-        const avgZ = projectedContinent.reduce((sum, p) => sum + p.z, 0) / projectedContinent.length;
-        if (avgZ < -0.25) return;
-
-        const alpha = Math.max(0, Math.min(1, (avgZ + 0.4) * 1.5));
+      // Draw dot-matrix land points
+      landPointPositions.forEach((pos) => {
+        const proj = project(pos, rot, globeSize, cx, cy);
+        if (proj.z < -0.1) return; // Behind the globe
+        
+        const alpha = Math.max(0, Math.min(1, (proj.z + 0.2) * 1.5));
+        const dotSize = 1.5 * proj.scale * (0.5 + alpha * 0.5);
         
         ctx.beginPath();
-        let started = false;
-        projectedContinent.forEach((p, i) => {
-          if (p.z > -0.3) {
-            if (!started) {
-              ctx.moveTo(p.x, p.y);
-              started = true;
-            } else {
-              ctx.lineTo(p.x, p.y);
-            }
-          }
-        });
-        ctx.closePath();
-        
-        ctx.fillStyle = landColor.replace("0.75", String(0.75 * alpha));
+        ctx.arc(proj.x, proj.y, dotSize, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(172, 60%, 55%, ${0.7 * alpha})`;
         ctx.fill();
-        ctx.strokeStyle = landBorder.replace("0.5", String(0.5 * alpha));
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
       });
 
-      // Subtle grid
-      ctx.lineWidth = 0.3;
-      ctx.strokeStyle = "hsla(200, 50%, 50%, 0.08)";
-      for (let i = 1; i < 6; i++) {
-        const y = cy - globeSize + (2 * globeSize * i) / 6;
-        const radiusAtY = Math.sqrt(Math.max(0, globeSize * globeSize - Math.pow(y - cy, 2)));
-        ctx.beginPath();
-        ctx.ellipse(cx, y, radiusAtY, radiusAtY * 0.1, 0, 0, Math.PI * 2);
-        ctx.stroke();
-      }
-
-      // Project all locations
+      // Project all partner locations
       const projected = points.map((p) => ({ ...p, proj: project(p.pos, rot, globeSize, cx, cy) }));
 
       // Draw connection arcs with particles
@@ -277,13 +281,11 @@ const InteractiveGlobe: React.FC = () => {
         const a = src.proj;
         const b = dst.proj;
 
-        // Arc control point (higher arc for longer distances)
         const dist = Math.sqrt(Math.pow(b.x - a.x, 2) + Math.pow(b.y - a.y, 2));
         const arcHeight = Math.min(globeSize * 0.35, dist * 0.4);
         const mx = (a.x + b.x) / 2;
         const my = (a.y + b.y) / 2 - arcHeight;
 
-        // Connection line with gradient
         const avgVisibility = (Math.max(0, a.z + 0.3) + Math.max(0, b.z + 0.3)) / 2;
         if (avgVisibility < 0.1) return;
 
@@ -307,7 +309,6 @@ const InteractiveGlobe: React.FC = () => {
             const px = (1 - t) * (1 - t) * a.x + 2 * (1 - t) * t * mx + t * t * b.x;
             const py = (1 - t) * (1 - t) * a.y + 2 * (1 - t) * t * my + t * t * b.y;
 
-            // Particle glow
             const particleGrad = ctx.createRadialGradient(px, py, 0, px, py, 10);
             particleGrad.addColorStop(0, `hsla(172, 80%, 75%, ${0.9 * avgVisibility})`);
             particleGrad.addColorStop(0.4, `hsla(172, 70%, 60%, ${0.4 * avgVisibility})`);
@@ -317,7 +318,6 @@ const InteractiveGlobe: React.FC = () => {
             ctx.fillStyle = particleGrad;
             ctx.fill();
 
-            // Particle core
             ctx.beginPath();
             ctx.arc(px, py, 2, 0, Math.PI * 2);
             ctx.fillStyle = `hsla(172, 90%, 90%, ${avgVisibility})`;
@@ -328,7 +328,7 @@ const InteractiveGlobe: React.FC = () => {
           });
       });
 
-      // Draw location points
+      // Draw partner location points
       projected.forEach((p) => {
         if (p.proj.z < -0.2) return;
         
@@ -371,7 +371,7 @@ const InteractiveGlobe: React.FC = () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
     };
-  }, [points, connectionPairs]);
+  }, [points, connectionPairs, landPointPositions]);
 
   return (
     <canvas 
