@@ -183,7 +183,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
+    height: 120px;
     background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
     pointer-events: none;
   }
@@ -198,7 +198,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
+    height: 120px;
     background: linear-gradient(to bottom, transparent 0%, hsl(220, 70%, 8%) 100%);
     pointer-events: none;
   }
