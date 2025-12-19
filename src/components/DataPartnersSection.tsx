@@ -452,7 +452,7 @@ const DataPartnersSection: React.FC = () => {
               <p className="text-gray-400 text-lg mt-6 max-w-lg">
                 Access real-world healthcare data from trusted partners across the globe. 
                 Our network spans hospitals, research institutions, and healthcare systems 
-                across Asia, Latin America, Africa, and the Middle East flowing to Europe and the US.
+                worldwide, enabling seamless data collaboration.
               </p>
             </div>
 
