@@ -54,10 +54,10 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 			datax: {
-				navy: '#1a2e2a',
-				teal: '#3d6b63',
-				'teal-light': '#5a8f85',
-				gray: '#e8eeec',
+				navy: '#061A40',
+				teal: '#00C8AA',
+				'teal-light': '#5EECD9',
+				gray: '#F5F5F5',
 			},
 			fontFamily: {
 				serif: ['Playfair Display', 'Georgia', 'serif'],
