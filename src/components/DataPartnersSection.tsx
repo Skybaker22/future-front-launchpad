@@ -125,12 +125,12 @@ const landPoints = generateLandPoints();
 // Generate grid points for lat/lon lines (ocean grid)
 const generateGridPoints = (): [number, number][] => {
   const points: [number, number][] = [];
-  const latStep = 15; // Latitude lines every 15 degrees
-  const lonStep = 15; // Longitude lines every 15 degrees
-  const dotSpacing = 8; // Spacing between dots along each line
+  const latStep = 20; // Latitude lines every 20 degrees
+  const lonStep = 20; // Longitude lines every 20 degrees
+  const dotSpacing = 12; // Spacing between dots along each line
   
   // Latitude lines (horizontal circles)
-  for (let lat = -75; lat <= 75; lat += latStep) {
+  for (let lat = -60; lat <= 60; lat += latStep) {
     for (let lon = -180; lon <= 180; lon += dotSpacing) {
       points.push([lat, lon]);
     }
@@ -138,7 +138,7 @@ const generateGridPoints = (): [number, number][] => {
   
   // Longitude lines (vertical meridians)
   for (let lon = -180; lon < 180; lon += lonStep) {
-    for (let lat = -75; lat <= 75; lat += dotSpacing) {
+    for (let lat = -60; lat <= 60; lat += dotSpacing) {
       points.push([lat, lon]);
     }
   }
@@ -291,11 +291,11 @@ const InteractiveGlobe: React.FC = () => {
         if (proj.z < -0.1) return;
         
         const alpha = Math.max(0, Math.min(1, (proj.z + 0.2) * 1.2));
-        const dotSize = 0.5 * proj.scale;
+        const dotSize = 0.4 * proj.scale;
         
         ctx.beginPath();
         ctx.arc(proj.x, proj.y, dotSize, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(200, 40%, 45%, ${0.15 * alpha})`;
+        ctx.fillStyle = `hsla(200, 30%, 50%, ${0.06 * alpha})`;
         ctx.fill();
       });
 
