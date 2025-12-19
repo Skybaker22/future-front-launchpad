@@ -9,6 +9,7 @@ const ContactSection = () => {
     'A privacy-preserving collaboration layer enabling compliant, scalable data access',
     'Unlock AI collaborations that accelerate innovation in healthcare',
     'Drive research impact & create new revenue streams',
+    'Healthcare providers: Monetize your data securely while maintaining full control and patient privacy',
   ];
 
   return (
@@ -21,8 +22,10 @@ const ContactSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               <span className="font-serif italic text-datax-teal">Get Started</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Experience how DataX revolutionizes secure access to life science data for your organization.
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Whether you're a <span className="font-semibold text-gray-800">researcher seeking data</span> or a{" "}
+              <span className="font-semibold text-gray-800">healthcare provider</span> looking to create 
+              recurring revenue from your data without compromising control and safety — we're here to help.
             </p>
           </div>
           
