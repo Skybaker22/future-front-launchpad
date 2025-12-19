@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -6,6 +5,7 @@ import TabsSection from '@/components/TabsSection';
 import FeaturesGrid from '@/components/FeaturesGrid';
 import StepsSection from '@/components/StepsSection';
 import ContactSection from '@/components/ContactSection';
+import DataPartnersSection from '@/components/DataPartnersSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -37,10 +37,13 @@ const Index = () => {
       {/* Features Grid - Dark with gradient */}
       <FeaturesGrid />
       
+      {/* Data Partners Globe Section */}
+      <DataPartnersSection />
+      
       {/* Steps Section - Light/Mid background */}
       <StepsSection />
       
-      {/* Contact Section - Dark */}
+      {/* Contact Section - Warm */}
       <ContactSection />
       
       <Footer />
