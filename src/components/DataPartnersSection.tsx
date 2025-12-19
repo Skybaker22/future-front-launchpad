@@ -30,7 +30,7 @@ const partnerLocations: PartnerLocation[] = [
 // Generate dot-matrix land points for Stripe-style globe
 const generateLandPoints = (): [number, number][] => {
   const points: [number, number][] = [];
-  const step = 3.5; // Density of dots
+  const step = 2.2; // Denser dots for refined pixel effect
   
   const landMasses: { minLat: number; maxLat: number; minLon: number; maxLon: number; shape?: (lat: number, lon: number) => boolean }[] = [
     // North America
@@ -260,11 +260,11 @@ const InteractiveGlobe: React.FC = () => {
         if (proj.z < -0.1) return; // Behind the globe
         
         const alpha = Math.max(0, Math.min(1, (proj.z + 0.2) * 1.5));
-        const dotSize = 1.5 * proj.scale * (0.5 + alpha * 0.5);
+        const dotSize = 0.9 * proj.scale * (0.6 + alpha * 0.4);
         
         ctx.beginPath();
         ctx.arc(proj.x, proj.y, dotSize, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(172, 60%, 55%, ${0.7 * alpha})`;
+        ctx.fillStyle = `hsla(172, 60%, 55%, ${0.75 * alpha})`;
         ctx.fill();
       });
 
