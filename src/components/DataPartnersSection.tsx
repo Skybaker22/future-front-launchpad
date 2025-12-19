@@ -217,9 +217,9 @@ const InteractiveGlobe: React.FC = () => {
       ctx.arc(cx, cy, globeSize, 0, Math.PI * 2);
       ctx.clip();
 
-      // Draw continents with land colors
-      const landColor = "hsla(140, 35%, 35%, 0.75)";
-      const landBorder = "hsla(140, 40%, 45%, 0.5)";
+      // Draw continents with DataX brand teal/green colors
+      const landColor = "hsla(172, 45%, 30%, 0.8)";
+      const landBorder = "hsla(172, 55%, 45%, 0.6)";
       
       Object.entries(continents).forEach(([name, continent]) => {
         const projectedContinent = continent.map(([lat, lon]) => {
@@ -391,7 +391,7 @@ const stats = [
 
 const DataPartnersSection: React.FC = () => {
   return (
-    <section className="bg-section-dark py-24 relative overflow-hidden">
+    <section className="bg-section-dark pt-24 pb-40 relative">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text content */}
