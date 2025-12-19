@@ -2,16 +2,12 @@
 import React, { Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Shield, Key, Database, Zap, CheckCircle } from 'lucide-react';
-import AnimatedParticles from './AnimatedParticles';
 
 const DigitalGlobe = React.lazy(() => import('./DigitalGlobe'));
 
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden flex flex-col items-center bg-stripe-gradient">
-      {/* Animated Particles */}
-      <AnimatedParticles count={40} className="z-[1]" />
-      
       {/* Animated Globe Background */}
       <Suspense fallback={null}>
         <DigitalGlobe />

@@ -3,7 +3,6 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ArrowRight, Mail, CheckCircle } from 'lucide-react';
-import AnimatedParticles from './AnimatedParticles';
 
 const ContactSection = () => {
   const benefits = [
@@ -15,7 +14,6 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-section-dark">
-      <AnimatedParticles count={35} />
       <div className="absolute inset-0 bg-grid opacity-20"></div>
       
       <div className="container mx-auto px-4 relative z-10">
