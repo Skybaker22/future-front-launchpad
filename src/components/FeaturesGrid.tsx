@@ -23,7 +23,7 @@ const features = [
 
 const FeaturesGrid = () => {
   return (
-    <section id="data-partners" className="py-24 pb-56 relative overflow-hidden bg-section-dark angled-divider-to-light">
+    <section id="data-partners" className="py-32 pb-64 relative overflow-hidden bg-section-dark angled-divider-to-light">
       <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
       
       <div className="container mx-auto px-4">
