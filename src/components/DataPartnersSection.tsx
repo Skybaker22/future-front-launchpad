@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import { Globe, Users, Building2, MapPin } from "lucide-react";
-
+import AnimatedParticles from "./AnimatedParticles";
 type PartnerLocation = {
   name: string;
   lat: number;
@@ -392,7 +392,8 @@ const stats = [
 const DataPartnersSection: React.FC = () => {
   return (
     <section className="bg-section-dark pt-24 pb-32 relative gradient-fade-to-light">
-      <div className="container mx-auto px-4">
+      <AnimatedParticles count={30} />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text content */}
           <div className="space-y-8">
