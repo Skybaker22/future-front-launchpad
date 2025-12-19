@@ -432,9 +432,6 @@ const DataPartnersSection: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Angled divider to next section */}
-      <div className="angled-divider-to-light" />
     </section>
   );
 };
