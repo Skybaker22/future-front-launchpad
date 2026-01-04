@@ -43,29 +43,16 @@ const ContactSection = () => {
                   ))}
                 </div>
                 
-                <div className="bg-white/5 border border-white/10 rounded-xl p-6 mt-8">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-white">Contact Us Directly</p>
-                      <a href="mailto:info@datax.me" className="text-primary hover:underline">
-                        info@datax.me
-                      </a>
-                    </div>
-                  </div>
-                </div>
               </div>
               
               {/* Right - Direct Contact CTA */}
               <div className="flex flex-col justify-center space-y-6">
                 <div className="text-center lg:text-left">
                   <h3 className="text-2xl font-semibold text-white mb-3">
-                    Ready to transform your research?
+                    Let's Connect
                   </h3>
                   <p className="text-gray-400 mb-6">
-                    Reach out directly and our team will get back to you within 24 hours.
+                    Whether you're looking to access data or monetize your assets, our team will get back to you within 24 hours.
                   </p>
                 </div>
                 
