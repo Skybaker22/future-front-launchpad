@@ -7,6 +7,7 @@ import StepsSection from '@/components/StepsSection';
 import ContactSection from '@/components/ContactSection';
 import DataPartnersSection from '@/components/DataPartnersSection';
 import Footer from '@/components/Footer';
+import dataxPlatformMockup from '@/assets/datax-platform-mockup.png';
 
 const Index = () => {
   return (
@@ -25,8 +26,8 @@ const Index = () => {
               <div className="absolute -inset-6 bg-gradient-to-r from-datax-teal/25 via-datax-cyan/15 to-datax-teal/25 rounded-3xl blur-3xl opacity-70"></div>
               <div className="relative group">
                 <img 
-                  src="/lovable-uploads/datax_portal_refined.png" 
-                  alt="DataX Platform Interface - Patient cohort discovery and data analysis"
+                  src={dataxPlatformMockup} 
+                  alt="DataX Platform Interface with AI Agent - Healthcare data collaboration and intelligent assistant"
                   className="w-full rounded-2xl shadow-[0_30px_100px_-20px_rgba(0,0,0,0.6),0_0_50px_rgba(45,212,191,0.2)] border border-white/15 transition-all duration-700 ease-out hover:scale-[1.01] hover:shadow-[0_35px_120px_-20px_rgba(0,0,0,0.7),0_0_70px_rgba(45,212,191,0.3)] backdrop-blur-sm"
                   style={{ 
                     imageRendering: 'crisp-edges',
