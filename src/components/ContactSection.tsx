@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { ArrowRight, Mail, CheckCircle } from 'lucide-react';
 
 const ContactSection = () => {
@@ -59,32 +58,29 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              {/* Right - Form */}
-              <div>
-                <form className="space-y-4">
-                  <Input
-                    className="bg-white/10 border-white/20 h-12 rounded-xl text-white placeholder:text-gray-400"
-                    placeholder="Your name"
-                  />
-                  <Input
-                    className="bg-white/10 border-white/20 h-12 rounded-xl text-white placeholder:text-gray-400"
-                    placeholder="Email address"
-                    type="email"
-                  />
-                  <Input
-                    className="bg-white/10 border-white/20 h-12 rounded-xl text-white placeholder:text-gray-400"
-                    placeholder="Company name"
-                  />
-                  <Button 
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/80 h-12 rounded-xl text-base font-semibold"
-                    type="submit"
-                  >
-                    Get Started <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                  <p className="text-xs text-center text-gray-500 pt-2">
-                    We prioritize your privacy. All information shared is protected by our confidentiality agreement.
+              {/* Right - Direct Contact CTA */}
+              <div className="flex flex-col justify-center space-y-6">
+                <div className="text-center lg:text-left">
+                  <h3 className="text-2xl font-semibold text-white mb-3">
+                    Ready to transform your research?
+                  </h3>
+                  <p className="text-gray-400 mb-6">
+                    Reach out directly and our team will get back to you within 24 hours.
                   </p>
-                </form>
+                </div>
+                
+                <a 
+                  href="mailto:info@datax.me"
+                  className="flex items-center justify-center gap-3 w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25"
+                >
+                  <Mail className="w-5 h-5" />
+                  Contact Us
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+                
+                <p className="text-xs text-center text-gray-500">
+                  We prioritize your privacy. All communications are protected by our confidentiality agreement.
+                </p>
               </div>
             </div>
           </div>
