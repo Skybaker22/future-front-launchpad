@@ -25,39 +25,54 @@ const researchAreas = [
     icon: Heart, 
     label: 'Heart Disease', 
     query: 'Find patients with atrial fibrillation and prior MI, age 50-70',
-    stats: '2.4M records available'
+    stats: '2.4M records available',
+    recordCount: 2400000
   },
   { 
     icon: Brain, 
     label: 'Neurological', 
     query: 'Cohort with Alzheimer\'s diagnosis and MRI imaging data',
-    stats: '890K records available'
+    stats: '890K records available',
+    recordCount: 890000
   },
   { 
     icon: Dna, 
     label: 'Oncology', 
     query: 'Breast cancer patients with genomic sequencing and treatment history',
-    stats: '1.8M records available'
+    stats: '1.8M records available',
+    recordCount: 1800000
   },
   { 
     icon: Activity, 
     label: 'Autoimmune', 
     query: 'Rheumatoid arthritis cohort with biologic therapy outcomes',
-    stats: '650K records available'
+    stats: '650K records available',
+    recordCount: 650000
   },
   { 
     icon: Droplets, 
     label: 'Diabetes', 
     query: 'Type 2 diabetes patients with HbA1c trends and comorbidities',
-    stats: '3.1M records available'
+    stats: '3.1M records available',
+    recordCount: 3100000
   },
   { 
     icon: Pill, 
     label: 'Rare Disease', 
     query: 'Patients with Fabry disease and enzyme replacement therapy data',
-    stats: '45K records available'
+    stats: '45K records available',
+    recordCount: 45000
   },
 ];
+
+const formatRecordCount = (count: number): string => {
+  if (count >= 1000000) {
+    return `${(count / 1000000).toFixed(1)}M`;
+  } else if (count >= 1000) {
+    return `${(count / 1000).toFixed(0)}K`;
+  }
+  return count.toString();
+};
 
 const StepsSection = () => {
   const [selectedAreas, setSelectedAreas] = useState<number[]>([]);
@@ -69,6 +84,11 @@ const StepsSection = () => {
         : [...prev, index]
     );
   };
+
+  const totalRecords = selectedAreas.reduce(
+    (sum, idx) => sum + researchAreas[idx].recordCount, 
+    0
+  );
 
   return (
     <section className="py-32 pb-56 relative overflow-hidden bg-section-light gradient-fade-to-dark">
@@ -168,22 +188,41 @@ const StepsSection = () => {
             {/* Dynamic query examples */}
             <div className={`relative z-10 mt-6 transition-all duration-300 ${selectedAreas.length > 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
               {selectedAreas.length > 0 && (
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 shadow-lg space-y-3 max-h-64 overflow-y-auto">
-                  {selectedAreas.map((areaIndex) => (
-                    <div key={areaIndex} className="flex items-start gap-3">
-                      <div className="p-2 rounded-lg bg-gradient-to-br from-datax-teal/20 to-datax-cyan/10 shrink-0">
-                        <Search className="w-4 h-4 text-datax-teal" />
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200/50 shadow-lg overflow-hidden">
+                  {/* Combined summary row */}
+                  <div className="bg-gradient-to-r from-datax-teal/10 to-datax-cyan/5 px-4 py-3 border-b border-gray-200/50">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-datax-teal animate-pulse"></div>
+                        <span className="text-sm font-medium text-gray-700">
+                          {selectedAreas.length} research {selectedAreas.length === 1 ? 'area' : 'areas'} selected
+                        </span>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1">
-                          {React.createElement(researchAreas[areaIndex].icon, { className: "w-3 h-3 text-datax-teal" })}
-                          <p className="text-xs text-gray-500 font-medium">{researchAreas[areaIndex].label}</p>
-                        </div>
-                        <p className="text-sm text-gray-800 font-medium italic">"{researchAreas[areaIndex].query}"</p>
-                        <p className="text-xs text-datax-teal font-semibold mt-1">{researchAreas[areaIndex].stats}</p>
+                      <div className="text-right">
+                        <span className="text-lg font-bold text-datax-teal">{formatRecordCount(totalRecords)}</span>
+                        <span className="text-xs text-gray-500 ml-1">total records</span>
                       </div>
                     </div>
-                  ))}
+                  </div>
+                  
+                  {/* Individual queries */}
+                  <div className="p-4 space-y-3 max-h-48 overflow-y-auto">
+                    {selectedAreas.map((areaIndex) => (
+                      <div key={areaIndex} className="flex items-start gap-3">
+                        <div className="p-2 rounded-lg bg-gradient-to-br from-datax-teal/20 to-datax-cyan/10 shrink-0">
+                          <Search className="w-4 h-4 text-datax-teal" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            {React.createElement(researchAreas[areaIndex].icon, { className: "w-3 h-3 text-datax-teal" })}
+                            <p className="text-xs text-gray-500 font-medium">{researchAreas[areaIndex].label}</p>
+                          </div>
+                          <p className="text-sm text-gray-800 font-medium italic">"{researchAreas[areaIndex].query}"</p>
+                          <p className="text-xs text-datax-teal font-semibold mt-1">{researchAreas[areaIndex].stats}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
