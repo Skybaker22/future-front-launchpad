@@ -134,7 +134,18 @@ const StepsSection = () => {
             </div>
             
             {/* Research area tags */}
-            <div className="relative z-10 mt-8 flex flex-wrap justify-center gap-2">
+            <div className="relative z-10 mt-8">
+              {/* Clear all button */}
+              <div className={`flex justify-center mb-3 transition-all duration-300 ${selectedAreas.length > 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                <button
+                  onClick={() => setSelectedAreas([])}
+                  className="text-xs text-gray-500 hover:text-datax-teal transition-colors flex items-center gap-1 px-2 py-1 rounded-md hover:bg-datax-teal/5"
+                >
+                  <span>Clear all</span>
+                  <span className="text-datax-teal">({selectedAreas.length})</span>
+                </button>
+              </div>
+              <div className="flex flex-wrap justify-center gap-2">
               {researchAreas.map((area, index) => {
                 const isSelected = selectedAreas.includes(index);
                 return (
@@ -152,8 +163,8 @@ const StepsSection = () => {
                   </button>
                 );
               })}
+              </div>
             </div>
-            
             {/* Dynamic query examples */}
             <div className={`relative z-10 mt-6 transition-all duration-300 ${selectedAreas.length > 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
               {selectedAreas.length > 0 && (
