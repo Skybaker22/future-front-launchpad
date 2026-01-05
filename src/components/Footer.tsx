@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -8,21 +8,21 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <span className="font-bold text-2xl">
+            <Link to="/" className="font-bold text-2xl">
               <span className="text-white">Data</span>
               <span className="text-primary">X</span>
-            </span>
+            </Link>
           </div>
           
           {/* Links */}
           <div className="flex flex-wrap justify-center gap-8">
-            <a href="#data-developers" className="text-sm text-gray-400 hover:text-white transition-colors">
+            <a href="/#data-developers" className="text-sm text-gray-400 hover:text-white transition-colors">
               Data Developers
             </a>
-            <a href="#data-partners" className="text-sm text-gray-400 hover:text-white transition-colors">
+            <a href="/#data-partners" className="text-sm text-gray-400 hover:text-white transition-colors">
               Data Partners
             </a>
-            <a href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">
+            <a href="/#contact" className="text-sm text-gray-400 hover:text-white transition-colors">
               Contact
             </a>
           </div>
@@ -38,10 +38,18 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-white/10 text-center">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
             © 2026 DataX. All rights reserved.
           </p>
+          <div className="flex gap-6">
+            <Link to="/privacy" className="text-sm text-gray-500 hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="text-sm text-gray-500 hover:text-white transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
