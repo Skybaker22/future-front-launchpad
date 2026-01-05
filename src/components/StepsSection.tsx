@@ -140,8 +140,8 @@ const StepsSection = () => {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-datax-teal/20 to-datax-cyan/20 rounded-3xl transform rotate-2 scale-105 opacity-40 group-hover:rotate-3 transition-transform duration-500"></div>
               <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5),0_0_40px_rgba(45,212,191,0.15)] border border-white/10">
                 <img 
-                  src="/lovable-uploads/078d0b53-a217-4b2d-bf33-6e42644b0d39.png" 
-                  alt="DataX AI Research Assistant - Intelligent data discovery and cohort analysis"
+                  src="/lovable-uploads/datax-ai-agent-refined.png" 
+                  alt="DataX AI Research Assistant - Intelligent cohort discovery showing diabetes retinopathy query results"
                   className="w-full rounded-2xl"
                 />
                 {/* Glass overlay */}
