@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Heart, Brain, Dna, Activity } from 'lucide-react';
+import { ArrowRight, Heart, Brain, Dna, Activity, Pill, Droplets } from 'lucide-react';
 
 const steps = [
   {
@@ -21,10 +21,12 @@ const steps = [
 ];
 
 const researchAreas = [
-  { icon: Heart, label: 'Heart Disease', color: 'from-red-500/20 to-red-600/10' },
-  { icon: Brain, label: 'Autoimmune', color: 'from-purple-500/20 to-purple-600/10' },
-  { icon: Dna, label: 'Oncology', color: 'from-datax-teal/20 to-datax-cyan/10' },
-  { icon: Activity, label: 'Rare Disease', color: 'from-amber-500/20 to-amber-600/10' },
+  { icon: Heart, label: 'Heart Disease', color: 'from-red-500/20 to-red-600/10', hoverBorder: 'hover:border-red-400/50' },
+  { icon: Brain, label: 'Neurological', color: 'from-purple-500/20 to-purple-600/10', hoverBorder: 'hover:border-purple-400/50' },
+  { icon: Dna, label: 'Oncology', color: 'from-datax-teal/20 to-datax-cyan/10', hoverBorder: 'hover:border-datax-teal/50' },
+  { icon: Activity, label: 'Autoimmune', color: 'from-orange-500/20 to-orange-600/10', hoverBorder: 'hover:border-orange-400/50' },
+  { icon: Droplets, label: 'Diabetes', color: 'from-blue-500/20 to-blue-600/10', hoverBorder: 'hover:border-blue-400/50' },
+  { icon: Pill, label: 'Rare Disease', color: 'from-amber-500/20 to-amber-600/10', hoverBorder: 'hover:border-amber-400/50' },
 ];
 
 const StepsSection = () => {
@@ -92,14 +94,14 @@ const StepsSection = () => {
             </div>
             
             {/* Research area tags */}
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-2">
               {researchAreas.map((area, index) => (
                 <div 
                   key={index}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${area.color} border border-gray-200/50 backdrop-blur-sm hover:scale-105 transition-transform duration-300 cursor-default`}
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r ${area.color} border border-gray-200/50 ${area.hoverBorder} backdrop-blur-sm hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer group`}
                 >
-                  <area.icon className="w-4 h-4 text-gray-700" />
-                  <span className="text-sm font-medium text-gray-700">{area.label}</span>
+                  <area.icon className="w-3.5 h-3.5 text-gray-600 group-hover:text-gray-800 transition-colors" />
+                  <span className="text-xs font-medium text-gray-600 group-hover:text-gray-800 transition-colors">{area.label}</span>
                 </div>
               ))}
             </div>
