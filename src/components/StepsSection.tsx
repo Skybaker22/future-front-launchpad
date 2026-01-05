@@ -60,10 +60,14 @@ const researchAreas = [
 ];
 
 const StepsSection = () => {
-  const [selectedArea, setSelectedArea] = useState<number | null>(null);
+  const [selectedAreas, setSelectedAreas] = useState<number[]>([]);
 
   const handleTagClick = (index: number) => {
-    setSelectedArea(selectedArea === index ? null : index);
+    setSelectedAreas(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index) 
+        : [...prev, index]
+    );
   };
 
   return (
@@ -132,7 +136,7 @@ const StepsSection = () => {
             {/* Research area tags */}
             <div className="mt-8 flex flex-wrap justify-center gap-2">
               {researchAreas.map((area, index) => {
-                const isSelected = selectedArea === index;
+                const isSelected = selectedAreas.includes(index);
                 return (
                   <button 
                     key={index}
@@ -150,27 +154,32 @@ const StepsSection = () => {
               })}
             </div>
             
-            {/* Dynamic query example */}
-            <div className={`mt-6 transition-all duration-300 ${selectedArea !== null ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
-              {selectedArea !== null && (
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 shadow-lg">
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-gradient-to-br from-datax-teal/20 to-datax-cyan/10">
-                      <Search className="w-4 h-4 text-datax-teal" />
+            {/* Dynamic query examples */}
+            <div className={`mt-6 transition-all duration-300 ${selectedAreas.length > 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
+              {selectedAreas.length > 0 && (
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 shadow-lg space-y-3 max-h-64 overflow-y-auto">
+                  {selectedAreas.map((areaIndex) => (
+                    <div key={areaIndex} className="flex items-start gap-3">
+                      <div className="p-2 rounded-lg bg-gradient-to-br from-datax-teal/20 to-datax-cyan/10 shrink-0">
+                        <Search className="w-4 h-4 text-datax-teal" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          {React.createElement(researchAreas[areaIndex].icon, { className: "w-3 h-3 text-datax-teal" })}
+                          <p className="text-xs text-gray-500 font-medium">{researchAreas[areaIndex].label}</p>
+                        </div>
+                        <p className="text-sm text-gray-800 font-medium italic">"{researchAreas[areaIndex].query}"</p>
+                        <p className="text-xs text-datax-teal font-semibold mt-1">{researchAreas[areaIndex].stats}</p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <p className="text-xs text-gray-500 mb-1">Example query</p>
-                      <p className="text-sm text-gray-800 font-medium italic">"{researchAreas[selectedArea].query}"</p>
-                      <p className="text-xs text-datax-teal font-semibold mt-2">{researchAreas[selectedArea].stats}</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               )}
             </div>
             
             {/* Default description when nothing selected */}
-            <p className={`text-center mt-6 text-gray-600 text-sm max-w-sm mx-auto transition-all duration-300 ${selectedArea === null ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
-              <span className="font-semibold text-datax-teal">Click a research area</span> — explore example queries across therapeutic domains
+            <p className={`text-center mt-6 text-gray-600 text-sm max-w-sm mx-auto transition-all duration-300 ${selectedAreas.length === 0 ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
+              <span className="font-semibold text-datax-teal">Click research areas</span> — select multiple to explore combined queries
             </p>
           </div>
         </div>
