@@ -6,6 +6,7 @@ import FeaturesGrid from '@/components/FeaturesGrid';
 import StepsSection from '@/components/StepsSection';
 import ContactSection from '@/components/ContactSection';
 import DataPartnersSection from '@/components/DataPartnersSection';
+import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import dataxPlatformMockup from '@/assets/datax-platform-mockup.png';
 
@@ -55,6 +56,9 @@ const Index = () => {
       
       {/* Steps Section - Light/Mid background */}
       <StepsSection />
+      
+      {/* FAQ Section */}
+      <FAQSection />
       
       {/* Contact Section - Warm */}
       <ContactSection />
