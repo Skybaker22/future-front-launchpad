@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { ArrowRight, Heart, Brain, Dna, Activity, Pill, Droplets, Search } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 const steps = [
   {
@@ -169,18 +170,30 @@ const StepsSection = () => {
               {researchAreas.map((area, index) => {
                 const isSelected = selectedAreas.includes(index);
                 return (
-                  <button 
-                    key={index}
-                    onClick={() => handleTagClick(index)}
-                    className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 cursor-pointer group ${
-                      isSelected 
-                        ? 'bg-gradient-to-r from-datax-teal to-datax-cyan text-white shadow-md shadow-datax-teal/25 scale-105 border border-datax-teal' 
-                        : 'bg-gradient-to-r from-datax-teal/10 to-datax-cyan/5 border border-datax-teal/20 hover:border-datax-teal/40 hover:from-datax-teal/20 hover:to-datax-cyan/10 hover:scale-105 hover:shadow-md'
-                    }`}
-                  >
-                    <area.icon className={`w-3.5 h-3.5 transition-colors ${isSelected ? 'text-white' : 'text-datax-teal group-hover:text-datax-teal'}`} />
-                    <span className={`text-xs font-medium transition-colors ${isSelected ? 'text-white' : 'text-gray-700 group-hover:text-gray-900'}`}>{area.label}</span>
-                  </button>
+                  <Tooltip key={index} delayDuration={300}>
+                    <TooltipTrigger asChild>
+                      <button 
+                        onClick={() => handleTagClick(index)}
+                        className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 cursor-pointer group ${
+                          isSelected 
+                            ? 'bg-gradient-to-r from-datax-teal to-datax-cyan text-white shadow-md shadow-datax-teal/25 scale-105 border border-datax-teal' 
+                            : 'bg-gradient-to-r from-datax-teal/10 to-datax-cyan/5 border border-datax-teal/20 hover:border-datax-teal/40 hover:from-datax-teal/20 hover:to-datax-cyan/10 hover:scale-105 hover:shadow-md'
+                        }`}
+                      >
+                        <area.icon className={`w-3.5 h-3.5 transition-colors ${isSelected ? 'text-white' : 'text-datax-teal group-hover:text-datax-teal'}`} />
+                        <span className={`text-xs font-medium transition-colors ${isSelected ? 'text-white' : 'text-gray-700 group-hover:text-gray-900'}`}>{area.label}</span>
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent 
+                      side="top" 
+                      className="max-w-xs bg-gray-900 text-white border-gray-800 p-3"
+                    >
+                      <div className="space-y-2">
+                        <p className="text-xs text-gray-400 italic">"{area.query}"</p>
+                        <p className="text-xs font-semibold text-datax-teal">{area.stats}</p>
+                      </div>
+                    </TooltipContent>
+                  </Tooltip>
                 );
               })}
               </div>
