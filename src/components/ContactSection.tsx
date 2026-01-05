@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Mail, CheckCircle } from 'lucide-react';
+import { ArrowRight, Mail, CheckCircle, Calendar } from 'lucide-react';
 
 const ContactSection = () => {
   const benefits = [
@@ -45,28 +45,40 @@ const ContactSection = () => {
                 
               </div>
               
-              {/* Right - Direct Contact CTA */}
+              {/* Right - Contact Options */}
               <div className="flex flex-col justify-center space-y-6">
                 <div className="text-center lg:text-left">
                   <h3 className="text-2xl font-semibold text-white mb-3">
                     Let's Connect
                   </h3>
                   <p className="text-gray-400 mb-6">
-                    Whether you're looking to access data or monetize your assets, our team will get back to you within 24 hours.
+                    Whether you're looking to access data or monetize your assets, reach out or book a call directly.
                   </p>
                 </div>
                 
-                <a 
-                  href="mailto:info@datax.me"
-                  className="flex items-center justify-center gap-3 w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25"
-                >
-                  <Mail className="w-5 h-5" />
-                  Contact Us
-                  <ArrowRight className="w-5 h-5" />
-                </a>
+                {/* Two CTA buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="mailto:info@datax.me"
+                    className="flex-1 flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25"
+                  >
+                    <Mail className="w-5 h-5" />
+                    Contact Us
+                  </a>
+                  
+                  <a 
+                    href="https://calendly.com/timo-himmelsbach-datax/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-[1.02]"
+                  >
+                    <Calendar className="w-5 h-5" />
+                    Book a Call
+                  </a>
+                </div>
                 
                 <p className="text-xs text-center text-gray-500">
-                  We prioritize your privacy. All communications are protected by our confidentiality agreement.
+                  We respond within 24 hours. All communications are confidential.
                 </p>
               </div>
             </div>
