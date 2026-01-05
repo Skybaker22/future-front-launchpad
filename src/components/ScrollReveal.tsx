@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { useInView } from 'framer-motion';
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -16,8 +16,11 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   direction = 'up',
   duration = 0.6,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: '-50px 0px',
+  });
 
   const directionOffset = {
     up: 'translateY(40px)',
@@ -33,8 +36,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       ref={ref}
       className={className}
       style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateY(0) translateX(0)' : initialTransform,
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0) translateX(0)' : initialTransform,
         transition: `opacity ${duration}s cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}s, transform ${duration}s cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}s`,
       }}
     >
