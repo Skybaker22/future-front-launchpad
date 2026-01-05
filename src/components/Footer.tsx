@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import { z } from 'zod';
 import { Send, Loader2 } from 'lucide-react';
 
@@ -28,16 +29,36 @@ const Footer = () => {
 
     setIsLoading(true);
     
-    // Simulate API call - replace with actual newsletter service integration
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Successfully subscribed!",
-      description: "Thank you for joining our newsletter. We'll keep you updated on the latest news.",
-    });
-    
-    setEmail('');
-    setIsLoading(false);
+    try {
+      const { data, error } = await supabase.functions.invoke('subscribe-newsletter', {
+        body: { email: result.data },
+      });
+
+      if (error) throw error;
+
+      if (data?.error) {
+        toast({
+          title: "Subscription failed",
+          description: data.error,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Successfully subscribed!",
+          description: "Thank you for joining our newsletter. We'll keep you updated on the latest news.",
+        });
+        setEmail('');
+      }
+    } catch (error: any) {
+      console.error('Newsletter subscription error:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
