@@ -141,7 +141,7 @@ const StepsSection = () => {
               <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5),0_0_40px_rgba(45,212,191,0.15)] border border-white/10">
                 <img 
                   src="/lovable-uploads/datax-ai-agent-refined.png" 
-                  alt="DataX AI Research Assistant - Intelligent cohort discovery showing diabetes retinopathy query results"
+                  alt="DataX AI Research Assistant - Cohort discovery for diabetic retinopathy research with patient counts and data modalities"
                   className="w-full rounded-2xl"
                 />
                 {/* Glass overlay */}
