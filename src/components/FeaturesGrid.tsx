@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { HandCoins, LineChart, Shield, Database, CheckCircle } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const features = [
   {
@@ -27,23 +27,25 @@ const FeaturesGrid = () => {
       <div className="absolute inset-0 bg-wave-pattern opacity-5"></div>
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            For <span className="font-serif italic text-datax-teal">Data Partners</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Unlock the value of your datasets through secure AI partnerships while maintaining full control
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              For <span className="font-serif italic text-datax-teal">Data Partners</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Unlock the value of your datasets through secure AI partnerships while maintaining full control
+            </p>
+          </div>
+        </ScrollReveal>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {features.map((feature, index) => (
-            <div 
-              key={index}
-              className={`glassmorphism rounded-2xl p-8 group hover:border-datax-teal/30 transition-all duration-300 ${
-                feature.highlight ? 'md:col-span-2' : ''
-              }`}
-            >
+            <ScrollReveal key={index} delay={index * 0.1} direction={index % 2 === 0 ? 'left' : 'right'}>
+              <div 
+                className={`glassmorphism rounded-2xl p-8 group hover:border-datax-teal/30 transition-all duration-300 h-full ${
+                  feature.highlight ? '' : ''
+                }`}
+              >
               <div className="flex items-start gap-6">
                 <div className="w-14 h-14 rounded-2xl bg-datax-teal/20 flex items-center justify-center shrink-0 group-hover:bg-datax-teal/30 transition-all duration-300">
                   <feature.icon className="w-7 h-7 text-datax-teal" />
@@ -67,6 +69,7 @@ const FeaturesGrid = () => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

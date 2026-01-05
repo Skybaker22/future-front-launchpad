@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import { Shield, Key, LineChart, HandCoins, Database, ShieldCheck } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const dataDevSteps = [
   { number: 1, title: 'Data demand', description: 'AI companies submit detailed data requests' },
@@ -52,14 +52,16 @@ const TabsSection = () => {
       <div className="absolute inset-0 bg-grid opacity-30"></div>
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            Who We <span className="font-serif italic text-datax-teal">Serve</span>
-          </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
-            Connecting data developers with data partners to accelerate healthcare AI innovation
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Who We <span className="font-serif italic text-datax-teal">Serve</span>
+            </h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              Connecting data developers with data partners to accelerate healthcare AI innovation
+            </p>
+          </div>
+        </ScrollReveal>
         
         {/* Tabs */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">

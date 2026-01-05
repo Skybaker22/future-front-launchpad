@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { ArrowRight, Heart, Brain, Dna, Activity, Pill, Droplets, Search } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import ScrollReveal from './ScrollReveal';
 
 const steps = [
   {
@@ -96,18 +96,20 @@ const StepsSection = () => {
       <div className="absolute inset-0 bg-grid opacity-30"></div>
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            How It <span className="font-serif italic text-datax-teal">Works</span>
-          </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
-            Three simple steps to unlock the value of your life science data
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              How It <span className="font-serif italic text-datax-teal">Works</span>
+            </h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              Three simple steps to unlock the value of your life science data
+            </p>
+          </div>
+        </ScrollReveal>
         
         <div className="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
           {/* Steps */}
-          <div className="flex flex-col md:flex-row lg:flex-col items-center lg:items-start gap-6 flex-1">
+          <ScrollReveal direction="left" className="flex flex-col md:flex-row lg:flex-col items-center lg:items-start gap-6 flex-1">
             {steps.map((step, index) => (
               <div key={step.number} className="w-full contents">
                 <div className="glassmorphism-light rounded-2xl p-6 group hover:border-datax-teal/30 transition-all duration-300 w-full md:flex-1 lg:w-full">
@@ -127,10 +129,10 @@ const StepsSection = () => {
                 )}
               </div>
             ))}
-          </div>
+          </ScrollReveal>
           
           {/* AI Agent Image with Research Areas */}
-          <div className="flex-1 relative max-w-lg">
+          <ScrollReveal direction="right" delay={0.2} className="flex-1 relative max-w-lg">
             {/* Layered glow effects (decorative) */}
             <div className="pointer-events-none absolute -inset-8 bg-gradient-to-tr from-datax-teal/30 via-transparent to-datax-cyan/20 rounded-[3rem] blur-3xl opacity-50"></div>
             <div className="pointer-events-none absolute -inset-4 bg-gradient-to-bl from-datax-cyan/20 via-transparent to-datax-teal/25 rounded-3xl blur-2xl opacity-60"></div>
@@ -244,7 +246,7 @@ const StepsSection = () => {
             <p className={`text-center mt-6 text-gray-600 text-sm max-w-sm mx-auto transition-all duration-300 ${selectedAreas.length === 0 ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
               <span className="font-semibold text-datax-teal">Click research areas</span> — select multiple to explore combined queries
             </p>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
