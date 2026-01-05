@@ -22,6 +22,17 @@ const Index = () => {
         {/* Platform Interface Image with angled transition */}
         <section id="features" className="py-16 pb-40 relative angled-divider-to-light">
           <div className="container mx-auto px-4">
+            {/* Section Header */}
+            <div className="text-center mb-12 max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                See Your Data <span className="font-serif italic text-datax-teal">in Action</span>
+              </h2>
+              <p className="text-gray-300 text-lg">
+                Our intuitive platform paired with an AI-powered research agent helps you discover 
+                the right datasets in seconds — turning complex data searches into simple conversations.
+              </p>
+            </div>
+            
             <div className="max-w-6xl mx-auto relative">
               {/* Ambient glow effect */}
               <div className="absolute -inset-6 bg-gradient-to-r from-datax-teal/25 via-datax-cyan/15 to-datax-teal/25 rounded-3xl blur-3xl opacity-70"></div>
