@@ -62,7 +62,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-16 border-t border-white/10 bg-[hsl(220,70%,6%)]">
+    <footer className="pt-16 pb-24 border-t border-white/10 bg-[hsl(220,70%,6%)]">
       <div className="container mx-auto px-4">
         {/* Newsletter Section */}
         <div className="max-w-2xl mx-auto text-center mb-16">
