@@ -67,7 +67,7 @@ const ContactSection = () => {
                   </a>
                   
                   <a 
-                    href="https://calendly.com/timo-himmelsbach-datax/30min"
+                    href="https://calendly.com/info-datax/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-[1.02]"
