@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollReveal from '@/components/ScrollReveal';
 
 const PrivacyPolicy = () => {
   return (
@@ -9,9 +10,11 @@ const PrivacyPolicy = () => {
       
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8">
-            <span className="font-serif italic text-primary">Privacy</span> Policy
-          </h1>
+          <ScrollReveal>
+            <h1 className="text-4xl md:text-5xl font-bold mb-8">
+              <span className="font-serif italic text-primary">Privacy</span> Policy
+            </h1>
+          </ScrollReveal>
           
           <div className="prose prose-invert prose-gray max-w-none space-y-8">
             <p className="text-gray-400 text-lg">
