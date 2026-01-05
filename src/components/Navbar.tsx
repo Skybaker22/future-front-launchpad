@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Calendar } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +49,21 @@ const Navbar = () => {
           ))}
         </div>
         
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
+          <Button 
+            variant="outline"
+            className="rounded-full px-5 border-white/20 text-white hover:bg-white/10 hover:border-white/40"
+            asChild
+          >
+            <a 
+              href="https://calendly.com/timo-himmelsbach-datax/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Calendar className="w-4 h-4 mr-2" />
+              Book a Call
+            </a>
+          </Button>
           <Button 
             className="bg-datax-teal text-datax-navy hover:bg-datax-teal/80 rounded-full px-6"
             asChild
@@ -81,7 +95,21 @@ const Navbar = () => {
             </a>
           ))}
           <Button 
-            className="w-full mt-4 bg-datax-teal hover:bg-datax-teal/80 text-datax-navy rounded-full"
+            variant="outline"
+            className="w-full mt-2 rounded-full border-white/20 text-white hover:bg-white/10"
+            asChild
+          >
+            <a 
+              href="https://calendly.com/timo-himmelsbach-datax/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Calendar className="w-4 h-4 mr-2" />
+              Book a Call
+            </a>
+          </Button>
+          <Button 
+            className="w-full mt-2 bg-datax-teal hover:bg-datax-teal/80 text-datax-navy rounded-full"
             asChild
           >
             <a href="#contact">Join Us</a>
