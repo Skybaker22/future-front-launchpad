@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Heart, Brain, Dna, Activity } from 'lucide-react';
 
 const steps = [
   {
@@ -18,6 +18,13 @@ const steps = [
     title: 'Create Value',
     description: 'Generate new revenue streams from your data assets through AI collaborations.',
   },
+];
+
+const researchAreas = [
+  { icon: Heart, label: 'Heart Disease', color: 'from-red-500/20 to-red-600/10' },
+  { icon: Brain, label: 'Autoimmune', color: 'from-purple-500/20 to-purple-600/10' },
+  { icon: Dna, label: 'Oncology', color: 'from-datax-teal/20 to-datax-cyan/10' },
+  { icon: Activity, label: 'Rare Disease', color: 'from-amber-500/20 to-amber-600/10' },
 ];
 
 const StepsSection = () => {
@@ -59,19 +66,47 @@ const StepsSection = () => {
             ))}
           </div>
           
-          {/* AI Agent Image */}
-          <div className="flex-1 relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-datax-teal/20 via-datax-cyan/10 to-datax-teal/20 rounded-3xl blur-2xl opacity-60"></div>
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/078d0b53-a217-4b2d-bf33-6e42644b0d39.png" 
-                alt="DataX AI Research Assistant - Intelligent data discovery and cohort analysis"
-                className="w-full max-w-md mx-auto rounded-2xl shadow-2xl border border-white/20"
-              />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
+          {/* AI Agent Image with Research Areas */}
+          <div className="flex-1 relative max-w-lg">
+            {/* Layered glow effects */}
+            <div className="absolute -inset-8 bg-gradient-to-tr from-datax-teal/30 via-transparent to-datax-cyan/20 rounded-[3rem] blur-3xl opacity-50"></div>
+            <div className="absolute -inset-4 bg-gradient-to-bl from-datax-cyan/20 via-transparent to-datax-teal/25 rounded-3xl blur-2xl opacity-60"></div>
+            
+            {/* Main image container */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-datax-teal/20 to-datax-cyan/20 rounded-3xl transform rotate-2 scale-105 opacity-40 group-hover:rotate-3 transition-transform duration-500"></div>
+              <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5),0_0_40px_rgba(45,212,191,0.15)] border border-white/10">
+                <img 
+                  src="/lovable-uploads/078d0b53-a217-4b2d-bf33-6e42644b0d39.png" 
+                  alt="DataX AI Research Assistant - Intelligent data discovery and cohort analysis"
+                  className="w-full rounded-2xl"
+                />
+                {/* Glass overlay */}
+                <div className="absolute inset-3 rounded-2xl bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+              
+              {/* Floating badge */}
+              <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-datax-teal to-datax-cyan text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg shadow-datax-teal/30">
+                AI-Powered
+              </div>
             </div>
-            <p className="text-center mt-6 text-gray-600 text-sm">
-              <span className="font-semibold text-datax-teal">AI-Powered Assistant</span> — Ask questions, discover cohorts, and accelerate your research
+            
+            {/* Research area tags */}
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {researchAreas.map((area, index) => (
+                <div 
+                  key={index}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${area.color} border border-gray-200/50 backdrop-blur-sm hover:scale-105 transition-transform duration-300 cursor-default`}
+                >
+                  <area.icon className="w-4 h-4 text-gray-700" />
+                  <span className="text-sm font-medium text-gray-700">{area.label}</span>
+                </div>
+              ))}
+            </div>
+            
+            {/* Description */}
+            <p className="text-center mt-6 text-gray-600 text-sm max-w-sm mx-auto">
+              <span className="font-semibold text-datax-teal">Ask naturally</span> — discover cohorts across cardiovascular, autoimmune, oncology, and rare disease research
             </p>
           </div>
         </div>
