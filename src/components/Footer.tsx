@@ -40,7 +40,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
           <p className="text-sm text-gray-500">
-            © 2025 DataX. All rights reserved.
+            © 2026 DataX. All rights reserved.
           </p>
         </div>
       </div>
