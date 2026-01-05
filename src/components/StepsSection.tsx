@@ -88,7 +88,7 @@ const StepsSection = () => {
           {/* Steps */}
           <div className="flex flex-col md:flex-row lg:flex-col items-center lg:items-start gap-6 flex-1">
             {steps.map((step, index) => (
-              <React.Fragment key={step.number}>
+              <div key={step.number} className="w-full contents">
                 <div className="glassmorphism-light rounded-2xl p-6 group hover:border-datax-teal/30 transition-all duration-300 w-full md:flex-1 lg:w-full">
                   <div className="flex items-start gap-4">
                     <div className="text-4xl font-bold text-datax-teal/30 group-hover:text-datax-teal/50 transition-colors duration-300">
@@ -100,23 +100,23 @@ const StepsSection = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {index < steps.length - 1 && (
-                  <ArrowRight className="w-6 h-6 text-datax-teal/60 hidden md:block lg:hidden shrink-0 rotate-0 md:rotate-0" />
+                  <ArrowRight className="w-6 h-6 text-datax-teal/60 hidden md:block lg:hidden shrink-0" />
                 )}
-              </React.Fragment>
+              </div>
             ))}
           </div>
           
           {/* AI Agent Image with Research Areas */}
           <div className="flex-1 relative max-w-lg">
-            {/* Layered glow effects */}
-            <div className="absolute -inset-8 bg-gradient-to-tr from-datax-teal/30 via-transparent to-datax-cyan/20 rounded-[3rem] blur-3xl opacity-50"></div>
-            <div className="absolute -inset-4 bg-gradient-to-bl from-datax-cyan/20 via-transparent to-datax-teal/25 rounded-3xl blur-2xl opacity-60"></div>
+            {/* Layered glow effects (decorative) */}
+            <div className="pointer-events-none absolute -inset-8 bg-gradient-to-tr from-datax-teal/30 via-transparent to-datax-cyan/20 rounded-[3rem] blur-3xl opacity-50"></div>
+            <div className="pointer-events-none absolute -inset-4 bg-gradient-to-bl from-datax-cyan/20 via-transparent to-datax-teal/25 rounded-3xl blur-2xl opacity-60"></div>
             
             {/* Main image container */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-datax-teal/20 to-datax-cyan/20 rounded-3xl transform rotate-2 scale-105 opacity-40 group-hover:rotate-3 transition-transform duration-500"></div>
+            <div className="relative group z-10">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-datax-teal/20 to-datax-cyan/20 rounded-3xl transform rotate-2 scale-105 opacity-40 group-hover:rotate-3 transition-transform duration-500"></div>
               <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5),0_0_40px_rgba(45,212,191,0.15)] border border-white/10">
                 <img 
                   src="/lovable-uploads/078d0b53-a217-4b2d-bf33-6e42644b0d39.png" 
@@ -124,7 +124,7 @@ const StepsSection = () => {
                   className="w-full rounded-2xl"
                 />
                 {/* Glass overlay */}
-                <div className="absolute inset-3 rounded-2xl bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>
+                <div className="pointer-events-none absolute inset-3 rounded-2xl bg-gradient-to-br from-white/5 via-transparent to-transparent"></div>
               </div>
               
               {/* Floating badge */}
@@ -134,7 +134,7 @@ const StepsSection = () => {
             </div>
             
             {/* Research area tags */}
-            <div className="mt-8 flex flex-wrap justify-center gap-2">
+            <div className="relative z-10 mt-8 flex flex-wrap justify-center gap-2">
               {researchAreas.map((area, index) => {
                 const isSelected = selectedAreas.includes(index);
                 return (
@@ -155,7 +155,7 @@ const StepsSection = () => {
             </div>
             
             {/* Dynamic query examples */}
-            <div className={`mt-6 transition-all duration-300 ${selectedAreas.length > 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
+            <div className={`relative z-10 mt-6 transition-all duration-300 ${selectedAreas.length > 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
               {selectedAreas.length > 0 && (
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50 shadow-lg space-y-3 max-h-64 overflow-y-auto">
                   {selectedAreas.map((areaIndex) => (
