@@ -54,9 +54,11 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 			datax: {
-				navy: '#061A40',
-				teal: '#00C8AA',
-				'teal-light': '#5EECD9',
+				navy: 'hsl(215, 80%, 8%)',
+				'navy-light': 'hsl(215, 60%, 15%)',
+				teal: 'hsl(168, 100%, 40%)',
+				'teal-light': 'hsl(172, 85%, 60%)',
+				cyan: 'hsl(180, 70%, 50%)',
 				gray: '#F5F5F5',
 			},
 			fontFamily: {
