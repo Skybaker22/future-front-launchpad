@@ -24,60 +24,36 @@ const researchAreas = [
   { 
     icon: Heart, 
     label: 'Heart Disease', 
-    color: 'from-red-500/20 to-red-600/10', 
-    hoverBorder: 'hover:border-red-400/50',
-    activeBorder: 'border-red-400',
-    activeColor: 'from-red-500/30 to-red-600/20',
     query: 'Find patients with atrial fibrillation and prior MI, age 50-70',
     stats: '2.4M records available'
   },
   { 
     icon: Brain, 
     label: 'Neurological', 
-    color: 'from-purple-500/20 to-purple-600/10', 
-    hoverBorder: 'hover:border-purple-400/50',
-    activeBorder: 'border-purple-400',
-    activeColor: 'from-purple-500/30 to-purple-600/20',
     query: 'Cohort with Alzheimer\'s diagnosis and MRI imaging data',
     stats: '890K records available'
   },
   { 
     icon: Dna, 
     label: 'Oncology', 
-    color: 'from-datax-teal/20 to-datax-cyan/10', 
-    hoverBorder: 'hover:border-datax-teal/50',
-    activeBorder: 'border-datax-teal',
-    activeColor: 'from-datax-teal/30 to-datax-cyan/20',
     query: 'Breast cancer patients with genomic sequencing and treatment history',
     stats: '1.8M records available'
   },
   { 
     icon: Activity, 
     label: 'Autoimmune', 
-    color: 'from-orange-500/20 to-orange-600/10', 
-    hoverBorder: 'hover:border-orange-400/50',
-    activeBorder: 'border-orange-400',
-    activeColor: 'from-orange-500/30 to-orange-600/20',
     query: 'Rheumatoid arthritis cohort with biologic therapy outcomes',
     stats: '650K records available'
   },
   { 
     icon: Droplets, 
     label: 'Diabetes', 
-    color: 'from-blue-500/20 to-blue-600/10', 
-    hoverBorder: 'hover:border-blue-400/50',
-    activeBorder: 'border-blue-400',
-    activeColor: 'from-blue-500/30 to-blue-600/20',
     query: 'Type 2 diabetes patients with HbA1c trends and comorbidities',
     stats: '3.1M records available'
   },
   { 
     icon: Pill, 
     label: 'Rare Disease', 
-    color: 'from-amber-500/20 to-amber-600/10', 
-    hoverBorder: 'hover:border-amber-400/50',
-    activeBorder: 'border-amber-400',
-    activeColor: 'from-amber-500/30 to-amber-600/20',
     query: 'Patients with Fabry disease and enzyme replacement therapy data',
     stats: '45K records available'
   },
@@ -161,10 +137,14 @@ const StepsSection = () => {
                   <button 
                     key={index}
                     onClick={() => handleTagClick(index)}
-                    className={`flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r ${isSelected ? area.activeColor : area.color} border ${isSelected ? area.activeBorder : 'border-gray-200/50'} ${!isSelected && area.hoverBorder} backdrop-blur-sm hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer group ${isSelected ? 'shadow-md scale-105' : ''}`}
+                    className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 cursor-pointer group ${
+                      isSelected 
+                        ? 'bg-gradient-to-r from-datax-teal to-datax-cyan text-white shadow-md shadow-datax-teal/25 scale-105 border border-datax-teal' 
+                        : 'bg-gradient-to-r from-datax-teal/10 to-datax-cyan/5 border border-datax-teal/20 hover:border-datax-teal/40 hover:from-datax-teal/20 hover:to-datax-cyan/10 hover:scale-105 hover:shadow-md'
+                    }`}
                   >
-                    <area.icon className={`w-3.5 h-3.5 transition-colors ${isSelected ? 'text-gray-800' : 'text-gray-600 group-hover:text-gray-800'}`} />
-                    <span className={`text-xs font-medium transition-colors ${isSelected ? 'text-gray-800' : 'text-gray-600 group-hover:text-gray-800'}`}>{area.label}</span>
+                    <area.icon className={`w-3.5 h-3.5 transition-colors ${isSelected ? 'text-white' : 'text-datax-teal group-hover:text-datax-teal'}`} />
+                    <span className={`text-xs font-medium transition-colors ${isSelected ? 'text-white' : 'text-gray-700 group-hover:text-gray-900'}`}>{area.label}</span>
                   </button>
                 );
               })}
