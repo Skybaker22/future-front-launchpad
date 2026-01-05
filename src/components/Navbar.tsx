@@ -56,7 +56,7 @@ const Navbar = () => {
             asChild
           >
             <a 
-              href="https://calendly.com/timo-himmelsbach-datax/30min"
+              href="https://calendly.com/info-datax/30min"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -100,7 +100,7 @@ const Navbar = () => {
             asChild
           >
             <a 
-              href="https://calendly.com/timo-himmelsbach-datax/30min"
+              href="https://calendly.com/info-datax/30min"
               target="_blank"
               rel="noopener noreferrer"
             >
