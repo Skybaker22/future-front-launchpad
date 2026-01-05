@@ -62,8 +62,22 @@ function project(
 
 function readCssVarHsl(varName: string, fallbackHsl: string) {
   if (typeof window === "undefined") return fallbackHsl;
-  const raw = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+  const raw = getComputedStyle(document.documentElement)
+    .getPropertyValue(varName)
+    .trim();
   return raw ? `hsl(${raw})` : fallbackHsl;
+}
+
+function toHsla(hslColor: string, alpha: number) {
+  // Supports both: "hsl(215 80% 8%)" and "hsl(215, 80%, 8%)"
+  const m = hslColor
+    .trim()
+    .match(/hsl\(\s*([\d.]+)[,\s]+([\d.]+)%[,\s]+([\d.]+)%\s*\)/i);
+
+  if (!m) return hslColor; // fallback (shouldn't happen)
+
+  const [, h, s, l] = m;
+  return `hsla(${h}, ${s}%, ${l}%, ${alpha})`;
 }
 
 const DigitalGlobe: React.FC = () => {
@@ -116,14 +130,14 @@ const DigitalGlobe: React.FC = () => {
       // subtle vignette
       const vignette = ctx.createRadialGradient(cx, cy, globeSize * 0.2, cx, cy, globeSize * 1.3);
       vignette.addColorStop(0, "transparent");
-      vignette.addColorStop(1, bg.replace("hsl(", "hsla(").replace(")", ", 0.35)"));
+      vignette.addColorStop(1, toHsla(bg, 0.35));
       ctx.fillStyle = vignette;
       ctx.fillRect(0, 0, width, height);
 
       // globe body
       const globeGrad = ctx.createRadialGradient(cx - globeSize * 0.25, cy - globeSize * 0.25, globeSize * 0.2, cx, cy, globeSize);
-      globeGrad.addColorStop(0, bg.replace("hsl(", "hsla(").replace(")", ", 0.15)"));
-      globeGrad.addColorStop(1, bg.replace("hsl(", "hsla(").replace(")", ", 0.65)"));
+      globeGrad.addColorStop(0, toHsla(bg, 0.15));
+      globeGrad.addColorStop(1, toHsla(bg, 0.65));
       ctx.beginPath();
       ctx.arc(cx, cy, globeSize, 0, Math.PI * 2);
       ctx.fillStyle = globeGrad;
@@ -136,8 +150,7 @@ const DigitalGlobe: React.FC = () => {
       ctx.clip();
 
       ctx.lineWidth = 1;
-      ctx.strokeStyle = accent.replace("hsl(", "hsla(").replace(")", ", 0.12)");
-
+      ctx.strokeStyle = toHsla(accent, 0.12);
       const gridCount = 10;
       for (let i = 1; i < gridCount; i++) {
         const y = cy - globeSize + (2 * globeSize * i) / gridCount;
@@ -172,7 +185,7 @@ const DigitalGlobe: React.FC = () => {
       ];
 
       ctx.lineWidth = 1;
-      ctx.strokeStyle = accent.replace("hsl(", "hsla(").replace(")", ", 0.18)");
+      ctx.strokeStyle = toHsla(accent, 0.18);
       pairs.forEach(([i, j]) => {
         const a = project(points[i].pos, rot, globeSize, cx, cy);
         const b = project(points[j].pos, rot, globeSize, cx, cy);
@@ -201,7 +214,7 @@ const DigitalGlobe: React.FC = () => {
         const phase = (now * 0.002 + x * 0.01 + y * 0.01) % 1;
         ctx.beginPath();
         ctx.arc(x, y, (4 + 10 * phase) * scale, 0, Math.PI * 2);
-        ctx.strokeStyle = accent.replace("hsl(", "hsla(").replace(")", `, ${0.3 * (1 - phase)})`);
+        ctx.strokeStyle = toHsla(accent, 0.3 * (1 - phase));
         ctx.lineWidth = 1;
         ctx.stroke();
       });
