@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import { Globe, Users, Building2, MapPin } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 type PartnerLocation = {
   name: string;
@@ -440,7 +441,7 @@ const DataPartnersSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text content */}
-          <div className="space-y-8">
+          <ScrollReveal direction="left" className="space-y-8">
             <div>
               <span className="text-primary font-medium text-sm uppercase tracking-wider">
                 Global Network
@@ -469,12 +470,12 @@ const DataPartnersSection: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right: Globe */}
-          <div className="relative aspect-square max-w-lg mx-auto lg:max-w-none">
+          <ScrollReveal direction="right" delay={0.2} className="relative aspect-square max-w-lg mx-auto lg:max-w-none">
             <InteractiveGlobe />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
