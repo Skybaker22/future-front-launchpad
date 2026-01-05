@@ -25,11 +25,24 @@ const Index = () => {
             {/* Section Header */}
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                See Your Data <span className="font-serif italic text-datax-teal">in Action</span>
+                Your Complete <span className="font-serif italic text-datax-teal">Data Journey</span>
               </h2>
+              
+              {/* Visual Chips */}
+              <div className="flex flex-wrap justify-center gap-3 mb-6">
+                {['Discovery', 'Access', 'Processing'].map((chip) => (
+                  <span 
+                    key={chip}
+                    className="px-4 py-2 rounded-full bg-datax-teal/15 border border-datax-teal/30 text-datax-teal font-medium text-sm"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+              
               <p className="text-gray-300 text-lg">
-                Our intuitive platform paired with an AI-powered research agent helps you discover 
-                the right datasets in seconds — turning complex data searches into simple conversations.
+                An AI-powered research platform with an intelligent agent that helps you 
+                find the right datasets — turning complex data searches into simple conversations.
               </p>
             </div>
             
