@@ -4,7 +4,6 @@ import HeroSection from '@/components/HeroSection';
 import TabsSection from '@/components/TabsSection';
 import FeaturesGrid from '@/components/FeaturesGrid';
 import StepsSection from '@/components/StepsSection';
-import ContactSection from '@/components/ContactSection';
 import DataPartnersSection from '@/components/DataPartnersSection';
 import FAQSection from '@/components/FAQSection';
 import CTABanner from '@/components/CTABanner';
@@ -85,10 +84,7 @@ const Index = () => {
       {/* FAQ Section */}
       <FAQSection />
       
-      {/* Contact Section - Warm */}
-      <ContactSection />
-      
-      {/* CTA Banner */}
+      {/* CTA / Contact Section */}
       <CTABanner />
       
       <Footer />
