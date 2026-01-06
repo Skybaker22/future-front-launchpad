@@ -7,6 +7,7 @@ import StepsSection from '@/components/StepsSection';
 import ContactSection from '@/components/ContactSection';
 import DataPartnersSection from '@/components/DataPartnersSection';
 import FAQSection from '@/components/FAQSection';
+import CTABanner from '@/components/CTABanner';
 import Footer from '@/components/Footer';
 import dataxPlatformMockup from '@/assets/datax-platform-mockup.png';
 
@@ -86,6 +87,9 @@ const Index = () => {
       
       {/* Contact Section - Warm */}
       <ContactSection />
+      
+      {/* CTA Banner */}
+      <CTABanner />
       
       <Footer />
     </div>
