@@ -68,7 +68,7 @@ const Navbar = () => {
             className="bg-datax-teal text-datax-navy hover:bg-datax-teal/80 rounded-full px-6"
             asChild
           >
-            <a href="#contact">Join Us</a>
+            <a href="#contact">Contact Us</a>
           </Button>
         </div>
         
@@ -112,7 +112,7 @@ const Navbar = () => {
             className="w-full mt-2 bg-datax-teal hover:bg-datax-teal/80 text-datax-navy rounded-full"
             asChild
           >
-            <a href="#contact">Join Us</a>
+            <a href="#contact">Contact Us</a>
           </Button>
         </div>
       )}
