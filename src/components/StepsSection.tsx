@@ -152,7 +152,7 @@ const StepsSection = () => {
               
               {/* Floating badge */}
               <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-datax-teal to-datax-cyan text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg shadow-datax-teal/30">
-                AI-Powered
+                Intelligent Agent
               </div>
             </div>
             
