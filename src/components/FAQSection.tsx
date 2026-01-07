@@ -10,7 +10,7 @@ import ScrollReveal from './ScrollReveal';
 const faqs = [
   {
     question: "How does DataX ensure data privacy and security?",
-    answer: "DataX employs enterprise-grade security measures including end-to-end encryption, SOC 2 Type II compliance, and HIPAA-compliant infrastructure. All data is anonymized and de-identified before analysis, ensuring patient privacy is never compromised. We also implement strict access controls and audit logging for complete transparency."
+    answer: "DataX employs enterprise-grade security measures including end-to-end encryption, SOC 2 Type II compliance, and HIPAA-compliant infrastructure. All data is anonymized before analysis, ensuring patient privacy is never compromised. We also implement strict access controls and audit logging for complete transparency."
   },
   {
     question: "What compliance standards does DataX meet?",
