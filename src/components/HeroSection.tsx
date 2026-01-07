@@ -33,7 +33,7 @@ const HeroSection = () => {
             className="bg-datax-teal text-datax-navy hover:bg-datax-teal/80 px-8 py-6 text-lg rounded-full"
             asChild
           >
-            <a href="#contact">
+            <a href="https://calendly.com/info-datax/30min" target="_blank" rel="noopener noreferrer">
               Join Us <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
