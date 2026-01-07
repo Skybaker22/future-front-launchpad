@@ -41,7 +41,7 @@ const Index = () => {
               </div>
               
               <p className="text-gray-300 text-lg">
-                An AI-powered research platform with an intelligent agent that helps you 
+                A research platform with an intelligent AI agent that helps you 
                 find the right datasets — turning complex data searches into simple conversations.
               </p>
             </div>
