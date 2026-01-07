@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "How does the data collaboration process work?",
-    answer: "Our platform enables secure data collaboration through a three-step process: First, data providers securely upload and anonymize their datasets. Then, our AI-powered matching engine identifies relevant cohorts for research needs. Finally, insights are delivered to researchers without exposing raw patient data, ensuring privacy-preserving analytics."
+    answer: "Our platform enables secure data collaboration through a three-step process: First, data providers securely upload and anonymize their datasets. Then, our matching engine identifies relevant cohorts for research needs. Finally, insights are delivered to researchers without exposing raw patient data, ensuring privacy-preserving analytics."
   },
   {
     question: "Who can access my organization's data?",
