@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: "What makes DataX different from other healthcare data platforms?",
-    answer: "DataX combines privacy-preserving technology with AI-powered insights, enabling collaboration without compromising data security. Our unique approach allows multiple organizations to derive insights from combined datasets while each party's data never leaves their secure environment. This federated approach, combined with our intuitive AI agent, makes complex analyses accessible to non-technical users."
+    answer: "DataX combines privacy-preserving technology with agentic insights and fair pricing, enabling collaboration without compromising data security. Our unique approach allows multiple organizations to derive insights from combined datasets while each party's data never leaves their secure environment. This federated approach, combined with our intuitive AI agent, makes complex analyses accessible to non-technical users."
   }
 ];
 
